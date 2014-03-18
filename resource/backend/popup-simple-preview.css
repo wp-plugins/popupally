@@ -20,6 +20,8 @@ font-size: 28px;
 line-height: 30px;
 font-weight: bold;
 margin: 0 0 10px 0;
+box-sizing:border-box;
+-moz-box-sizing:border-box;
 }
 .fancybox-inner .field {
 display:block;
@@ -37,6 +39,8 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.67),inset 0 1px 3px rgba(5,5,5,0.13);
 -webkit-border-radius: 3px;
 -moz-border-radius: 3px;
 border-radius: 3px;
+box-sizing:border-box;
+-moz-box-sizing:border-box;
 }
 .fancybox-inner .submit {
 font-family: Arial, Helvetica, sans-serif;
@@ -58,6 +62,8 @@ border-radius: 3pt;
 width:100%;
 padding:15px 0;
 margin: 10px auto;
+box-sizing:border-box;
+-moz-box-sizing:border-box;
 }
 .fancybox-inner .privacy{
 font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
@@ -65,6 +71,8 @@ font-size:14px;
 line-height:14px;
 margin:10px 0;
 padding:0;
+box-sizing:border-box;
+-moz-box-sizing:border-box;
 }
 .logo-row {
 	margin: 20px 0;
@@ -84,6 +92,8 @@ font-size: 24px;
 line-height: 28px;
 margin:0;
 padding:0;
+box-sizing:border-box;
+-moz-box-sizing:border-box;
 }
 @media (max-width: 768px) {
 	.fancybox-outer{width:480px;}

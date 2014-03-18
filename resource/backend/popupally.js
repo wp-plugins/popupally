@@ -129,6 +129,7 @@ jQuery(document).ready(function($) {
 		var lowercased = '';
 		var email_input_name = '';
 		var name_input_name = '';
+		var count = 0;
 
 		$parsed_form.find('input[type!="submit"]').each(function(index, input) {
 			var $input = $(input);
@@ -136,10 +137,13 @@ jQuery(document).ready(function($) {
 			var input_type = $input.attr('type')
 			var input_value = $input.val();
 
+			count += 1;
 			if('hidden' == input_type) {
-				$parent.before($('<input class="sign-up-form-generated-' + id + '" type="hidden" name="' + data_object.setting_variable + '[' + id + ']' + '[hidden-form-fields][' + input_name + ']"/>').val(input_value));
+				$parent.before($('<input class="sign-up-form-generated-' + id + '" type="hidden" name="' + data_object.setting_variable + '[' + id + ']' + '[hidden-form-fields-name][' + count + ']"/>').val(input_name));
+				$parent.before($('<input class="sign-up-form-generated-' + id + '" type="hidden" name="' + data_object.setting_variable + '[' + id + ']' + '[hidden-form-fields-value][' + count + ']"/>').val(input_value));
 			} else {
-				$parent.before($('<input class="sign-up-form-generated-' + id + '" type="hidden" name="' + data_object.setting_variable + '[' + id + ']' + '[other-form-fields][' + input_name + ']"/>').val(input_value));
+				$parent.before($('<input class="sign-up-form-generated-' + id + '" type="hidden" name="' + data_object.setting_variable + '[' + id + ']' + '[other-form-fields-name][' + count + ']"/>').val(input_name));
+				$parent.before($('<input class="sign-up-form-generated-' + id + '" type="hidden" name="' + data_object.setting_variable + '[' + id + ']' + '[other-form-fields-value][' + count + ']"/>').val(input_value));
 				other_inputs.push(input_name);
 
 				lowercased = input_name.toLowerCase();

@@ -9,8 +9,8 @@ Author URI: http://nathalielussier.com/
 Author: Robin Li
 Requires at least: 2.3
 Tested up to: 3.8
-Version: 1.0.2
-Stable tag: 1.0.2
+Version: 1.0.3
+Stable tag: 1.0.3
 License: http://opensource.org/licenses/Artistic-2.0
 
 PopupAlly allows you to create advanced popup signup forms in under 5 minutes without the need to deal with messy code.
@@ -32,6 +32,9 @@ Want to increase your subscriber base? Exit-intent popups allow you to capture l
 
 == Changelog ==
 
+= 1.0.3 =
+* Change field name storage structure to allow for '[' and ']' in field names.
+
 = 1.0.2 =
 * Update version number in the main plugin file.
 
@@ -42,6 +45,9 @@ Want to increase your subscriber base? Exit-intent popups allow you to capture l
 * Initial release.
 
 == Upgrade Notice ==
+
+= 1.0.3 =
+Affects form parsing for Madmimi. Resave 'Style Settings' after upgrade. Upgrade immediately.
 
 = 1.0.1 =
 * Fix sign-up form field display issue. Upgrade immediately.
