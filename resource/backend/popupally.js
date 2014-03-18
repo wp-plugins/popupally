@@ -126,6 +126,9 @@ jQuery(document).ready(function($) {
 		$('#sign-up-form-action-' + id).val(form_action);
 
 		var other_inputs = [];
+		var lowercased = '';
+		var email_input_name = '';
+		var name_input_name = '';
 
 		$parsed_form.find('input[type!="submit"]').each(function(index, input) {
 			var $input = $(input);
@@ -138,17 +141,37 @@ jQuery(document).ready(function($) {
 			} else {
 				$parent.before($('<input class="sign-up-form-generated-' + id + '" type="hidden" name="' + data_object.setting_variable + '[' + id + ']' + '[other-form-fields][' + input_name + ']"/>').val(input_value));
 				other_inputs.push(input_name);
+
+				lowercased = input_name.toLowerCase();
+
+				if('' === email_input_name && -1 < lowercased.indexOf('email')) {
+					email_input_name = input_name;
+				} else if('' === name_input_name && -1 < lowercased.indexOf('name')) {
+					name_input_name = input_name;
+				}
 			}
 		});
 
 		$('.sign-up-form-select-' + id).each(function(index, select) {
 			var $select = $(select);
+			var previous_value = $select.val();
+			var splash_field = $select.attr('sign-up-form-field');
 
 			$select.empty();
 
 			$.each(other_inputs, function(other_inputs_index, other_input) {
 				$select.append($('<option></option>').attr('value', other_input).text(other_input));
 			});
+
+			if('' != previous_value && -1 < $.inArray(previous_value, other_inputs)) {
+				$select.val(previous_value);
+			} else {
+				if('email' == splash_field && '' != email_input_name) {
+					$select.val(email_input_name);
+				} else if('name' == splash_field && '' != name_input_name) {
+					$select.val(name_input_name);
+				}
+			}
 		});
 	});
 	$('.sign-up-form-raw-html').change();
