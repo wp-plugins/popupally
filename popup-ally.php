@@ -3,7 +3,7 @@
  Plugin Name: PopupAlly
  Plugin URI: http://ambitionally.com/popupally/
  Description: Want to increase your subscriber base? Exit-intent popups allow you to capture lost visitors and have been shown to increase conversion by over 300%. PopupAlly allows you to create advanced popup signup forms in under 5 minutes, even if you don't know code. PopupAlly's visual editor allows you to customize the look-and-feel of your popups with an instant preview, saving you lots of time.
- Version: 1.0.3
+ Version: 1.0.4
  Author: Nathalie Lussier Media Inc.
  Author URI: http://nathalielussier.com/
  */
@@ -12,7 +12,7 @@
 if (!class_exists('PopupAlly')) {
 	class PopupAlly {
 		/// CONSTANTS
-		const VERSION = '1.0.3';
+		const VERSION = '1.0.4';
 
 		const SETTING_KEY_DISPLAY = '_popupally_setting_general';
 		const SETTING_KEY_STYLE = '_popupally_setting_style';
@@ -314,14 +314,18 @@ if (!class_exists('PopupAlly')) {
 			}
 			// generate hidden fields
 			$hidden_fields = '';
-			foreach ($setting['hidden-form-fields-name'] as $field_id => $name) {
-				$hidden_fields .= '<input type="hidden" name="' . $name . '" value="' . esc_attr($setting['hidden-form-fields-value'][$field_id]) . '"/>';
-			}
-			foreach ($setting['other-form-fields-name'] as $field_id => $name) {
-				if ($name === $setting['sign-up-form-name-field'] || $name === $setting['sign-up-form-email-field']) {
-					continue;
+			if (isset($setting['hidden-form-fields-name'])) {
+				foreach ($setting['hidden-form-fields-name'] as $field_id => $name) {
+					$hidden_fields .= '<input type="hidden" name="' . $name . '" value="' . esc_attr($setting['hidden-form-fields-value'][$field_id]) . '"/>';
 				}
-				$hidden_fields .= '<input type="hidden" name="' . $name . '" value="' . esc_attr($setting['other-form-fields-value'][$field_id]) . '"/>';
+			}
+			if (isset($setting['other-form-fields-name'])) {
+				foreach ($setting['other-form-fields-name'] as $field_id => $name) {
+					if ($name === $setting['sign-up-form-name-field'] || $name === $setting['sign-up-form-email-field']) {
+						continue;
+					}
+					$hidden_fields .= '<input type="hidden" name="' . $name . '" value="' . esc_attr($setting['other-form-fields-value'][$field_id]) . '"/>';
+				}
 			}
 			$template = str_replace('{{hidden-fields}}', $hidden_fields, $template);
 			return $template;

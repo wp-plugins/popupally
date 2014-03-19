@@ -9,8 +9,8 @@ Author URI: http://nathalielussier.com/
 Author: Robin Li
 Requires at least: 2.3
 Tested up to: 3.8
-Version: 1.0.3
-Stable tag: 1.0.3
+Version: 1.0.4
+Stable tag: 1.0.4
 License: http://opensource.org/licenses/Artistic-2.0
 
 PopupAlly allows you to create advanced popup signup forms in under 5 minutes without the need to deal with messy code.
@@ -32,6 +32,9 @@ Want to increase your subscriber base? Exit-intent popups allow you to capture l
 
 == Changelog ==
 
+= 1.0.4 =
+* Do not generate hidden fields if none exists. This could be causing errors for more strict php implementations.
+
 = 1.0.3 =
 * Change field name storage structure to allow for '[' and ']' in field names.
 
@@ -45,6 +48,9 @@ Want to increase your subscriber base? Exit-intent popups allow you to capture l
 * Initial release.
 
 == Upgrade Notice ==
+
+= 1.0.4 =
+* Do not generate hidden fields if none exists. This update has no impact if you are not currently seeing errors.
 
 = 1.0.3 =
 Affects form parsing for Madmimi. Resave 'Style Settings' after upgrade. Upgrade immediately.

@@ -28,9 +28,11 @@
 								<th scope="row">Name field</th>
 								<td>
 									<select class="sign-up-form-select-<?php echo $id; ?>" sign-up-form-field="name" name="<?php echo PopupAlly::SETTING_KEY_STYLE . '[' . $id . ']'; ?>[sign-up-form-name-field]">
-										<?php foreach($setting['other-form-fields-name'] as $field_id => $name) { ?>
+										<?php if (isset($setting['other-form-fields-name'])) {
+										foreach($setting['other-form-fields-name'] as $field_id => $name) { ?>
 										<option value="<?php echo $name; ?>" <?php selected($setting['sign-up-form-name-field'], $name); ?>><?php echo $name; ?></option>
-										<?php } ?>
+										<?php }
+										} ?>
 									</select>
 								</td>
 							</tr>
@@ -38,9 +40,11 @@
 								<th scope="row">Email field</th>
 								<td>
 									<select class="sign-up-form-select-<?php echo $id; ?>" sign-up-form-field="email" name="<?php echo PopupAlly::SETTING_KEY_STYLE . '[' . $id . ']'; ?>[sign-up-form-email-field]">
-										<?php foreach($setting['other-form-fields-name'] as $field_id => $name) { ?>
+										<?php if (isset($setting['other-form-fields-name'])) {
+										foreach($setting['other-form-fields-name'] as $field_id => $name) { ?>
 										<option value="<?php echo $name; ?>" <?php selected($setting['sign-up-form-email-field'], $name); ?>><?php echo $name; ?></option>
-										<?php } ?>
+										<?php }
+										} ?>
 									</select>
 								</td>
 							</tr>
