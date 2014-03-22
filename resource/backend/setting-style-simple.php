@@ -2,7 +2,7 @@
 	<h2><?php _e('Popup Style Settings'); ?></h2>
 	<?php settings_errors('popupally_style'); ?>
 
-	<p>Need help setting up the popups? Watch the tutorial videos at <a href="<?php echo PopupAlly::HELP_URL; ?>">our website</a>!</p>
+	<p>Need help setting up the popups? See the tutorial on <a href="<?php echo PopupAlly::HELP_URL; ?>">our website</a>!</p>
 	<form enctype="multipart/form-data" method="post" action="options.php"> 
 		<?php settings_fields( 'popupally_style_settings' ); ?>
 
@@ -54,22 +54,22 @@
 				<div>
 					<fieldset class="popupally-fieldset popupally-style-preview">
 						<legend>Preview</legend>
-						<div id="popup-box-preview-<?php echo $id; ?>" class="fancybox-outer">
-							<div class="fancybox-inner">
-								<div class="fancybox-center">
-									<div class="desc customizable-color-text-<?php echo $id; ?>" style="cursor: pointer;" id="preview-headline-<?php echo $id; ?>"></div>
-									<div class="logo-row" id="logo-row-<?php echo $id; ?>">
-										<div class="clear"></div>
-										<img class="logo-img" id="preview-img-<?php echo $id; ?>" src="" alt="">
-										<div class="logo-text customizable-color-text-<?php echo $id; ?>" id="preview-sales-text-<?php echo $id; ?>"></div>
-										<div class="clear"></div>
+						<div id="popup-box-preview-<?php echo $id; ?>" class="fancybox-outer-sxzw">
+							<div class="fancybox-inner-sxzw">
+								<div class="fancybox-center-sxzw">
+									<div class="desc-sxzw customizable-color-text-<?php echo $id; ?>" style="cursor: pointer;" id="preview-headline-<?php echo $id; ?>"></div>
+									<div class="logo-row-sxzw" id="logo-row-<?php echo $id; ?>">
+										<div class="clear-sxzw"></div>
+										<img class="logo-img-sxzw" id="preview-img-<?php echo $id; ?>" src="" alt="">
+										<div class="logo-text-sxzw customizable-color-text-<?php echo $id; ?>" id="preview-sales-text-<?php echo $id; ?>"></div>
+										<div class="clear-sxzw"></div>
 									</div>
-									<div class="content">
-											<input type="text" name="name" class="field" placeholder="Enter your first name here"/>
-											<input type="text" id="email" name="email" class="field" placeholder="Enter a valid email here"/>
-											<input type="button" id="subscribe-button-<?php echo $id; ?>" class="submit no-click-through" value=""/>
-											<div class="privacy customizable-color-text-<?php echo $id; ?>" id="privacy-text-<?php echo $id; ?>"></div>
+									<div class="content-sxzw">
+										<input type="text" name="name" class="field-sxzw" placeholder="Enter your first name here"/>
+										<input type="text" id="email" name="email" class="field-sxzw" placeholder="Enter a valid email here"/>
+										<input type="button" id="subscribe-button-<?php echo $id; ?>" class="submit-sxzw no-click-through" value=""/>
 									</div>
+									<div class="privacy-sxzw customizable-color-text-<?php echo $id; ?>" id="privacy-text-<?php echo $id; ?>"></div>
 								</div>
 							</div>
 						</div>
@@ -137,11 +137,6 @@
 						</table>
 					</fieldset>
 				</div>
-				<input type="hidden" name="<?php echo PopupAlly::SETTING_KEY_STYLE . '[' . $id . ']'; ?>[popup-selector]" value="<?php echo $setting['popup-selector']; ?>"/>
-				<input type="hidden" name="<?php echo PopupAlly::SETTING_KEY_STYLE . '[' . $id . ']'; ?>[popup-class]" value="<?php echo $setting['popup-class']; ?>"/>
-				<input type="hidden" name="<?php echo PopupAlly::SETTING_KEY_STYLE . '[' . $id . ']'; ?>[cookie-name]" value="<?php echo $setting['cookie-name']; ?>"/>
-				<input type="hidden" name="<?php echo PopupAlly::SETTING_KEY_STYLE . '[' . $id . ']'; ?>[open-trigger]" value="<?php echo $setting['open-trigger']; ?>"/>
-				<input type="hidden" name="<?php echo PopupAlly::SETTING_KEY_STYLE . '[' . $id . ']'; ?>[close-trigger]" value="<?php echo $setting['close-trigger']; ?>"/>
 			</div>
 		</div>
 		<?php } ?>

@@ -24,12 +24,12 @@ var PlatformAllyDependencyBinder = (function() {
 
 					var $dependencies = $('[data-dependency="' + dependency_name + '"]');
 
-					$dependencies.filter('[hide-toggle]').css("visibility","hidden");
-					$dependencies.filter('[hide-toggle][data-dependency-value="' + value + '"]').css("visibility","visible");
-					$dependencies.filter('[hide-toggle]').css("position","absolute");
-					$dependencies.filter('[hide-toggle][data-dependency-value="' + value + '"]').css("position","inherit");
+					$dependencies.filter('[hide-toggle]').hide();
+					$dependencies.filter('[hide-toggle][data-dependency-value="' + value + '"]').show();
 					$dependencies.filter('[readonly-toggle]').prop('readonly', true);
 					$dependencies.filter('[readonly-toggle][data-dependency-value="' + value + '"]').prop('readonly', false);
+					$dependencies.filter('[disable-toggle]').prop('disabled', true);
+					$dependencies.filter('[disable-toggle][data-dependency-value="' + value + '"]').prop('disabled', false);
 				}).change();
 			}
 		});
@@ -181,4 +181,30 @@ jQuery(document).ready(function($) {
 		});
 	});
 	$('.sign-up-form-raw-html').change();
+	function update_selected_status(elem) {
+		var all_selector = $(elem).attr('update-all-trigger'),
+			num_selector = $(elem).attr('update-num-trigger');
+
+		if (all_selector) {
+			if ($(all_selector).prop('checked')) {
+				$(elem).val('all');
+				return;
+			}
+		}
+		$(elem).val($(num_selector + ':checked').length);
+	}
+	$('[update-all-trigger]').each(function(index, elem) {
+		var selector = $(elem).attr('update-all-trigger');
+		$(selector).on('change propertychange', function(e) {
+			update_selected_status(elem);
+		});
+		update_selected_status(elem);
+	});
+	$('[update-num-trigger]').each(function(index, elem) {
+		var selector = $(elem).attr('update-num-trigger');
+		$(document).on('change propertychange', selector, function(e) {
+			update_selected_status(elem);
+		});
+		update_selected_status(elem);
+	});
 });

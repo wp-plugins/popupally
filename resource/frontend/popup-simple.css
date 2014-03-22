@@ -1,8 +1,8 @@
-.clear {clear: both; height:0px; width: 100;}
-.fancybox-overlay-{{num}} {width:100%;height:100%;overflow:auto;overflow-y:scroll;position:fixed;bottom:0;right:0;display:none;background-color:rgba(80,80,80,0.5);}
-.fancybox-opened-{{num}} {display:block !important;z-index:9999;}
+.clear-sxzw {clear: both; height:0px; width: 100;}
+.fancybox-overlay-sxzw-{{num}} {width:100%;height:100%;overflow:auto;overflow-y:scroll;position:fixed;bottom:0;right:0;display:none;background-color:rgba(80,80,80,0.5);}
+.fancybox-opened-sxzw-{{num}} {display:block !important;z-index:9999;}
 
-.fancybox-outer-{{num}} {
+.fancybox-outer-sxzw-{{num}} {
 position:absolute;
 top:20%;
 left:50%;
@@ -16,12 +16,15 @@ box-shadow: 0 10px 25px rgba(0,0,0,0.5);
 -moz-border-radius: 4px;
 border-radius: 4px;
 }
-.fancybox-inner-{{num}}{overflow:visible;height:auto;padding:20px;text-align:center;}
-.fancybox-inner-{{num}} .content {
+.fancybox-inner-sxzw-{{num}}{overflow:visible;height:auto;padding:20px;text-align:center;}
+.fancybox-inner-sxzw-{{num}} .content-sxzw {
 text-align: center;
 vertical-align: middle;
+width:100%;
+box-sizing:border-box;
+-moz-box-sizing:border-box;
 }
-.fancybox-inner-{{num}} .desc {
+.fancybox-inner-sxzw-{{num}} .desc-sxzw {
 font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
 font-size: 28px;
 line-height: 30px;
@@ -31,8 +34,9 @@ color:{{text-color}};
 display: {{display-headline}};
 box-sizing:border-box;
 -moz-box-sizing:border-box;
+cursor: pointer;
 }
-.fancybox-inner-{{num}} .field {
+.fancybox-inner-sxzw-{{num}} .field-sxzw {
 display:block;
 padding:15px 12px;
 margin:0 auto 10px auto;
@@ -50,8 +54,9 @@ box-shadow: 0 1px 0 rgba(255,255,255,0.67),inset 0 1px 3px rgba(5,5,5,0.13);
 border-radius: 3px;
 box-sizing:border-box;
 -moz-box-sizing:border-box;
+height:auto;
 }
-.fancybox-inner-{{num}} .submit {
+.fancybox-inner-sxzw-{{num}} .submit-sxzw {
 font-family: Arial, Helvetica, sans-serif;
 font-size: 22px;
 line-height:27px;
@@ -74,11 +79,11 @@ margin: 10px auto;
 box-sizing:border-box;
 -moz-box-sizing:border-box;
 }
-.fancybox-inner-{{num}} .submit:hover {
+.fancybox-inner-sxzw-{{num}} .submit-sxzw:hover {
 background-color:{{subscribe-button-color}};
 color:{{subscribe-button-text-color}};
 }
-.fancybox-inner-{{num}} .privacy{
+.fancybox-inner-sxzw-{{num}} .privacy-sxzw{
 font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
 font-size:14px;
 line-height:14px;
@@ -89,8 +94,8 @@ padding:0;
 box-sizing:border-box;
 -moz-box-sizing:border-box;
 }
-.fancybox-outer-{{num}} .fancybox-close:link, .fancybox-close:visited, .fancybox-close:hover, .fancybox-close:active{text-decoration:none;}
-.fancybox-outer-{{num}} .fancybox-close {
+.fancybox-outer-sxzw-{{num}} .fancybox-close-sxzw:link, .fancybox-close-sxzw:visited, .fancybox-close-sxzw:hover, .fancybox-close-sxzw:active{text-decoration:none;}
+.fancybox-outer-sxzw-{{num}} .fancybox-close-sxzw {
 font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 display: block;
 font-size: 16px;
@@ -111,18 +116,18 @@ border: 2pt solid white;
 -moz-border-radius: 18pt;
 border-radius: 18pt;
 }
-.fancybox-inner-{{num}} .logo-row {
+.fancybox-inner-sxzw-{{num}} .logo-row-sxzw {
 margin: 20px 0;
 display: {{display-logo-row}};
 }
-.fancybox-inner-{{num}} .logo-img {
+.fancybox-inner-sxzw-{{num}} .logo-img-sxzw {
 height: 120px;
 margin: 0 20px 0 0;
 float: left;
 display: {{display-logo-img}};
 }
 
-.fancybox-inner-{{num}} .logo-text {
+.fancybox-inner-sxzw-{{num}} .logo-text-sxzw {
 height: 100%;
 width: 100%;
 vertical-align: top;
@@ -137,22 +142,22 @@ box-sizing:border-box;
 -moz-box-sizing:border-box;
 }
 @media (max-width: 768px) {
-	.fancybox-outer-{{num}}{width:480px;margin-left:-240px;}
-	.fancybox-inner-{{num}} .desc{font-size:24px;line-height:26px;}
-	.fancybox-inner-{{num}} .field {padding:10px 10px;font-size: 12px;line-height: 18px;margin-bottom:7px;}
-	.fancybox-inner-{{num}} .submit {font-size: 18px;padding:10px 0;margin-top:8px;margin-bottom:8px;}
-	.fancybox-inner-{{num}} .privacy{font-size:10px;line-height:10px;}
-	.fancybox-inner-{{num}} .logo-row {height:80px;margin:15px 0;}
-	.fancybox-inner-{{num}} .logo-img {height:80px;width:80px;margin:0 15px 0 0;}
-	.fancybox-inner-{{num}} .logo-text {font-size:20px;line-height:22px;}
+	.fancybox-outer-sxzw-{{num}}{width:480px;margin-left:-240px;}
+	.fancybox-inner-sxzw-{{num}} .desc-sxzw{font-size:24px;line-height:26px;}
+	.fancybox-inner-sxzw-{{num}} .field-sxzw {padding:10px 10px;font-size: 12px;line-height: 18px;margin-bottom:7px;}
+	.fancybox-inner-sxzw-{{num}} .submit-sxzw {font-size: 18px;padding:10px 0;margin-top:8px;margin-bottom:8px;}
+	.fancybox-inner-sxzw-{{num}} .privacy-sxzw{font-size:10px;line-height:10px;}
+	.fancybox-inner-sxzw-{{num}} .logo-row-sxzw {height:80px;margin:15px 0;}
+	.fancybox-inner-sxzw-{{num}} .logo-img-sxzw {height:80px;width:80px;margin:0 15px 0 0;}
+	.fancybox-inner-sxzw-{{num}} .logo-text-sxzw {font-size:20px;line-height:22px;}
 }
 @media (max-width: 520px) {
-	.fancybox-outer-{{num}}{width:300px;margin-left:-150px;}
-	.fancybox-inner-{{num}} .desc{font-size:18px;line-height:20px;}
-	.fancybox-inner-{{num}} .field {padding:10px 6px;font-size: 10px;line-height: 14px;margin-bottom:5px;}
-	.fancybox-inner-{{num}} .submit {font-size: 16px;padding:8px 0;margin-top:4px;margin-bottom:4px;}
-	.fancybox-inner-{{num}} .privacy{font-size:8px;line-height:8px;}
-	.fancybox-inner-{{num}} .logo-row {height:60px;margin:10px 0;}
-	.fancybox-inner-{{num}} .logo-img {height:60px;width:60px;margin:0 10px 0 0;}
-	.fancybox-inner-{{num}} .logo-text {font-size:12px;line-height:14px;}
+	.fancybox-outer-sxzw-{{num}}{width:300px;margin-left:-150px;}
+	.fancybox-inner-sxzw-{{num}} .desc-sxzw{font-size:18px;line-height:20px;}
+	.fancybox-inner-sxzw-{{num}} .field-sxzw {padding:10px 6px;font-size: 10px;line-height: 14px;margin-bottom:5px;}
+	.fancybox-inner-sxzw-{{num}} .submit-sxzw {font-size: 16px;padding:8px 0;margin-top:4px;margin-bottom:4px;}
+	.fancybox-inner-sxzw-{{num}} .privacy-sxzw{font-size:8px;line-height:8px;}
+	.fancybox-inner-sxzw-{{num}} .logo-row-sxzw {height:60px;margin:10px 0;}
+	.fancybox-inner-sxzw-{{num}} .logo-img-sxzw {height:60px;width:60px;margin:0 10px 0 0;}
+	.fancybox-inner-sxzw-{{num}} .logo-text-sxzw {font-size:12px;line-height:14px;}
 }

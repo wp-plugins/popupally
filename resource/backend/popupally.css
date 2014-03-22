@@ -92,6 +92,35 @@ a.anchor{display: block; position: relative; top: -20px; visibility: hidden;}
 .popupally-display-form {
 	margin-right:320px;
 }
+.page-selection-wrapper {
+	display:inline-block;
+	width:49%;
+	margin:0;
+	border:0px solid black;
+	padding:0;
+}
+.page-selection-scroll {
+	height:300px;
+	overflow:auto;
+	border:1px solid #111111;
+}
+.page-selection-scroll ul {
+	margin-left: 20px;
+	line-height: 24px;
+}
+.popupally-display-pages th {
+	width:100px;
+}
+.include-selection input[type="checkbox"]:checked+label{
+	color:green;
+}
+.exclude-selection input[type="checkbox"]:checked+label{
+	color:red;
+}
+.selected-num-status {
+	margin-bottom:10px;
+	width:80px;
+}
 @media (max-width: 1440px) {
 	.popupally-style-customization select {
 		max-width:200px;

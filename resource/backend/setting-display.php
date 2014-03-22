@@ -2,7 +2,7 @@
 	<h2><?php _e('Popup Display Settings'); ?></h2>
 	<?php settings_errors('popupally_display'); ?>
 
-	<p>Need help setting up the popups? Watch the tutorial videos at <a href="<?php echo PopupAlly::HELP_URL; ?>">our website</a>!</p>
+	<p>Need help setting up the popups? See the tutorial on <a href="<?php echo PopupAlly::HELP_URL; ?>">our website</a>!</p>
 	<div class="popupally-display-sidebar">
 		<a class="popupally-display-sidebar-1" target="_blank" href="http://30daylistbuildingchallenge.com/?utm_source=popupallyplugin&utm_medium=sidebarad&utm_campaign=30daylistbuildingchallenge">
 			<img src="<?php echo $plugin_dir; ?>/resource/backend/popupally-side.png" alt="Check out the 30 Day List Building Challenge!" width="300" height="350">
@@ -54,15 +54,123 @@
 						<tr valign="top" hide-toggle data-dependency="show-all-<?php echo $id; ?>" data-dependency-value="false">
 							<th scope="row">Use for only these posts/pages</th>
 							<td>
-								<input class="full-width" type="text" name="<?php echo PopupAlly::SETTING_KEY_DISPLAY . '[' . $id . ']'; ?>[include]" value="<?php if (!empty($setting['include'])) {echo implode(',', array_map('esc_attr', $setting['include']));} ?>"/>
-								<small>Comma-delimited list of post/page id</small>
+								<div class="page-selection-wrapper">
+									<input readonly type="text" class="selected-num-status" update-all-trigger="#include-all-pages-<?php echo $id; ?>" update-num-trigger=".include-page-<?php echo $id; ?>"><label> pages selected</label>
+									<div class="include-selection page-selection-scroll">
+										<input type="checkbox" <?php echo isset($setting['include']['all-pages'])?'checked':''; ?> id="include-all-pages-<?php echo $id; ?>" value="true" name="<?php echo PopupAlly::SETTING_KEY_DISPLAY . '[' . $id . ']'; ?>[include][all-pages]"><label for="include-all-pages-<?php echo $id; ?>">All pages</label>
+										<ul>
+										<?php $depth = array();
+										foreach ($pages as $page) {
+											if (0 === $page->post_parent) {
+												if (count($depth) > 0) {
+													while(count($depth) > 0) {
+														array_pop($depth);
+														?></ul></li><?php
+													}
+												} else {
+													?></li><?php
+												}
+											} elseif (end($depth) === $page->post_parent) {
+											} elseif (in_array($page->post_parent, $depth)) {
+												while(end($depth) !== $page->post_parent) {
+													array_pop($depth);
+													?></ul></li><?php
+												}
+											} else {
+												$depth []= $page->post_parent;
+												?><ul><?php
+											}
+										?>
+											<li>
+												<input class="include-page-<?php echo $id; ?>" <?php echo isset($setting['include'][$page->ID])?'checked':''; ?> id="include-<?php echo $id; ?>-<?php echo $page->ID; ?>" disable-toggle data-dependency="include-all-pages-<?php echo $id; ?>" data-dependency-value="false" type="checkbox" value="true" name="<?php echo PopupAlly::SETTING_KEY_DISPLAY . '[' . $id . ']'; ?>[include][<?php echo $page->ID; ?>]"><label for="include-<?php echo $id; ?>-<?php echo $page->ID; ?>"><?php echo $page->post_title . ' (' . $page->ID . ')'; ?></label>
+										<?php }
+
+										if (count($depth) > 0) {
+											while(count($depth) > 0) {
+												array_pop($depth);
+												?></ul></li><?php
+											}
+										} else {
+											?></li><?php
+										}
+										?>
+										</ul>
+									</div>
+								</div>
+								<div class="page-selection-wrapper">
+									<input readonly type="text" class="selected-num-status" update-all-trigger="#include-all-posts-<?php echo $id; ?>" update-num-trigger=".include-post-<?php echo $id; ?>"><label> posts selected</label>
+									<div class="include-selection page-selection-scroll">
+										<input type="checkbox" <?php echo isset($setting['include']['all-posts'])?'checked':''; ?> id="include-all-posts-<?php echo $id; ?>" value="true" name="<?php echo PopupAlly::SETTING_KEY_DISPLAY . '[' . $id . ']'; ?>[include][all-posts]"><label for="include-all-posts-<?php echo $id; ?>">All posts</label>
+										<ul>
+										<?php foreach ($posts as $post) { ?>
+											<li>
+												<input class="include-post-<?php echo $id; ?>" <?php echo isset($setting['include'][$post->ID])?'checked':''; ?> id="include-<?php echo $id; ?>-<?php echo $post->ID; ?>" disable-toggle data-dependency="include-all-posts-<?php echo $id; ?>" data-dependency-value="false" type="checkbox" value="true" name="<?php echo PopupAlly::SETTING_KEY_DISPLAY . '[' . $id . ']'; ?>[include][<?php echo $post->ID; ?>]"><label for="include-<?php echo $id; ?>-<?php echo $post->ID; ?>"><?php echo $post->post_title . ' (' . $post->ID . ')'; ?></label>
+											</li>
+										<?php } ?>
+										</ul>
+									</div>
+								</div>
 							</td>
 						</tr>
 						<tr valign="top" hide-toggle data-dependency="show-all-<?php echo $id; ?>" data-dependency-value="true">
 							<th scope="row">Except for these posts/pages</th>
 							<td>
-								<input class="full-width" type="text" name="<?php echo PopupAlly::SETTING_KEY_DISPLAY . '[' . $id . ']'; ?>[exclude]" value="<?php if (!empty($setting['exclude'])) {echo implode(',', array_map('esc_attr', $setting['exclude']));} ?>"/>
-								<small>Comma-delimited list of post/page id</small>
+								<div class="page-selection-wrapper">
+									<input readonly type="text" class="selected-num-status" update-all-trigger="#exclude-all-pages-<?php echo $id; ?>" update-num-trigger=".exclude-page-<?php echo $id; ?>"><label> pages selected</label>
+									<div class="exclude-selection page-selection-scroll">
+										<input type="checkbox" <?php echo isset($setting['exclude']['all-pages'])?'checked':''; ?> id="exclude-all-pages-<?php echo $id; ?>" value="true" name="<?php echo PopupAlly::SETTING_KEY_DISPLAY . '[' . $id . ']'; ?>[exclude][all-pages]"><label for="exclude-all-pages-<?php echo $id; ?>">All pages</label>
+										<ul>
+										<?php $depth = array();
+										foreach ($pages as $page) {
+											if (0 === $page->post_parent) {
+												if (count($depth) > 0) {
+													while(count($depth) > 0) {
+														array_pop($depth);
+														?></ul></li><?php
+													}
+												} else {
+													?></li><?php
+												}
+											} elseif (end($depth) === $page->post_parent) {
+											} elseif (in_array($page->post_parent, $depth)) {
+												while(end($depth) !== $page->post_parent) {
+													array_pop($depth);
+													?></ul></li><?php
+												}
+											} else {
+												$depth []= $page->post_parent;
+												?><ul><?php
+											}
+										?>
+											<li>
+												<input class="exclude-page-<?php echo $id; ?>" <?php echo isset($setting['exclude'][$page->ID])?'checked':''; ?> id="exclude-<?php echo $id; ?>-<?php echo $page->ID; ?>" disable-toggle data-dependency="exclude-all-pages-<?php echo $id; ?>" data-dependency-value="false" type="checkbox" value="true" name="<?php echo PopupAlly::SETTING_KEY_DISPLAY . '[' . $id . ']'; ?>[exclude][<?php echo $page->ID; ?>]"><label for="exclude-<?php echo $id; ?>-<?php echo $page->ID; ?>"><?php echo $page->post_title . ' (' . $page->ID . ')'; ?></label>
+										<?php }
+
+										if (count($depth) > 0) {
+											while(count($depth) > 0) {
+												array_pop($depth);
+												?></ul></li><?php
+											}
+										} else {
+											?></li><?php
+										}
+										?>
+										</ul>
+									</div>
+								</div>
+								<div class="page-selection-wrapper">
+									<input readonly type="text" class="selected-num-status" update-all-trigger="#exclude-all-posts-<?php echo $id; ?>" update-num-trigger=".exclude-post-<?php echo $id; ?>"><label> posts selected</label>
+									<div class="exclude-selection page-selection-scroll">
+										<input type="checkbox" <?php echo isset($setting['exclude']['all-posts'])?'checked':''; ?> id="exclude-all-posts-<?php echo $id; ?>" value="true" name="<?php echo PopupAlly::SETTING_KEY_DISPLAY . '[' . $id . ']'; ?>[exclude][all-posts]"><label for="exclude-all-posts-<?php echo $id; ?>">All posts</label>
+										<ul>
+										<?php foreach ($posts as $post) { ?>
+											<li>
+												<input class="exclude-post-<?php echo $id; ?>" <?php echo isset($setting['exclude'][$post->ID])?'checked':''; ?> id="exclude-<?php echo $id; ?>-<?php echo $post->ID; ?>" disable-toggle data-dependency="exclude-all-posts-<?php echo $id; ?>" data-dependency-value="false" type="checkbox" value="true" name="<?php echo PopupAlly::SETTING_KEY_DISPLAY . '[' . $id . ']'; ?>[exclude][<?php echo $post->ID; ?>]"><label for="exclude-<?php echo $id; ?>-<?php echo $post->ID; ?>"><?php echo $post->post_title . ' (' . $post->ID . ')'; ?></label>
+											</li>
+										<?php } ?>
+										</ul>
+									</div>
+								</div>
 							</td>
 						</tr>
 					</tbody>
@@ -87,8 +195,46 @@
 						<tr valign="top">
 							<th scope="row">Thank you page after signing-up</th>
 							<td>
-								<input class="full-width" type="text" name="<?php echo PopupAlly::SETTING_KEY_DISPLAY . '[' . $id . ']'; ?>[thank-you]" value="<?php if (!empty($setting['thank-you'])) {echo implode(',', array_map('esc_attr', $setting['thank-you']));} ?>"/>
-								<small>Comma-delimited list of post/page id. This popup will never be shown on any pages after the user sees the Thank You page(s).</small>
+								<input readonly type="text" class="selected-num-status" update-num-trigger=".thank-you-page-<?php echo $id; ?>"><label> pages selected</label>
+								<div class="include-selection page-selection-scroll">
+									<ul>
+									<?php $depth = array();
+									foreach ($pages as $page) {
+										if (0 === $page->post_parent) {
+											if (count($depth) > 0) {
+												while(count($depth) > 0) {
+													array_pop($depth);
+													?></ul></li><?php
+												}
+											} else {
+												?></li><?php
+											}
+										} elseif (end($depth) === $page->post_parent) {
+										} elseif (in_array($page->post_parent, $depth)) {
+											while(end($depth) !== $page->post_parent) {
+												array_pop($depth);
+												?></ul></li><?php
+											}
+										} else {
+											$depth []= $page->post_parent;
+											?><ul><?php
+										}
+									?>
+										<li>
+											<input class="thank-you-page-<?php echo $id; ?>" <?php echo isset($setting['thank-you'][$page->ID])?'checked':''; ?> id="thank-you-<?php echo $id; ?>-<?php echo $page->ID; ?>" type="checkbox" value="true" name="<?php echo PopupAlly::SETTING_KEY_DISPLAY . '[' . $id . ']'; ?>[thank-you][<?php echo $page->ID; ?>]"><label for="thank-you-<?php echo $id; ?>-<?php echo $page->ID; ?>"><?php echo $page->post_title . ' (' . $page->ID . ')'; ?></label>
+									<?php }
+
+									if (count($depth) > 0) {
+										while(count($depth) > 0) {
+											array_pop($depth);
+											?></ul></li><?php
+										}
+									} else {
+										?></li><?php
+									}
+									?>
+									</ul>
+								</div>
 							</td>
 						</tr>
 						<tr valign="top">

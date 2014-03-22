@@ -9,8 +9,8 @@ Author URI: http://nathalielussier.com/
 Author: Robin Li
 Requires at least: 2.3
 Tested up to: 3.8
-Version: 1.0.4
-Stable tag: 1.0.4
+Version: 1.1.0
+Stable tag: 1.1.0
 License: http://opensource.org/licenses/Artistic-2.0
 
 PopupAlly allows you to create advanced popup signup forms in under 5 minutes without the need to deal with messy code.
@@ -32,6 +32,14 @@ Want to increase your subscriber base? Exit-intent popups allow you to capture l
 
 == Changelog ==
 
+= 1.1.0 =
+* Upgrade interface for better page/post selection.
+* Add unique postfix to CSS class to avoid conflict.
+    * Fix input field display error in Firefox when input[type="text"] has height defined.
+    * Fix input field stretches outside border when class 'content' has width defined.
+* Add non-inline mode for themes that do not implement the wp_head function.
+* Add PHP version check and provide warning if PHP version is less than 5.3
+
 = 1.0.4 =
 * Do not generate hidden fields if none exists. This could be causing errors for more strict php implementations.
 
@@ -48,6 +56,9 @@ Want to increase your subscriber base? Exit-intent popups allow you to capture l
 * Initial release.
 
 == Upgrade Notice ==
+
+= 1.1.0 =
+* Improves page/post selection on Display Setting. Fixes minor style issues when conflict with existing CSS. Add non-inline mode for themes that do not implement the wp_head function.
 
 = 1.0.4 =
 * Do not generate hidden fields if none exists. This update has no impact if you are not currently seeing errors.
