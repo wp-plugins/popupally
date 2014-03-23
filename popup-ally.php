@@ -3,7 +3,7 @@
  Plugin Name: PopupAlly
  Plugin URI: http://ambitionally.com/popupally/
  Description: Want to increase your subscriber base? Exit-intent popups allow you to capture lost visitors and have been shown to increase conversion by over 300%. PopupAlly allows you to create advanced popup signup forms in under 5 minutes, even if you don't know code. PopupAlly's visual editor allows you to customize the look-and-feel of your popups with an instant preview, saving you lots of time.
- Version: 1.1.0
+ Version: 1.1.1
  Author: Nathalie Lussier Media Inc.
  Author URI: http://nathalielussier.com/
  */
@@ -12,7 +12,7 @@
 if (!class_exists('PopupAlly')) {
 	class PopupAlly {
 		/// CONSTANTS
-		const VERSION = '1.1.0';
+		const VERSION = '1.1.1';
 
 		const SETTING_KEY_DISPLAY = '_popupally_setting_general';
 		const SETTING_KEY_STYLE = '_popupally_setting_style';
@@ -289,7 +289,8 @@ if (!class_exists('PopupAlly')) {
 		public static function sanitize_advanced_settings($input) {
 			add_settings_error('popupally_advanced', 'settings_updated', 'Settings saved!', 'updated');
 
-			if (isset($input['no-inline']) && 'true' === $input['no-inline']) {
+			$input = wp_parse_args($input, self::$default_advanced_settings);
+			if ('true' === $input['no-inline']) {
 				self::generate_script_files();
 			}
 			set_transient(self::SETTING_KEY_ADVANCED, $input, self::CACHE_PERIOD);
@@ -309,7 +310,6 @@ if (!class_exists('PopupAlly')) {
 		}
 
 		private static function generate_script_files($style = false) {
-			$url = wp_nonce_url('themes.php?page=otto','otto-theme-options');
 			if (false === ($creds = request_filesystem_credentials('admin.php', '', false, false, null))) {
 				return true;
 			}
@@ -578,6 +578,7 @@ if (!class_exists('PopupAlly')) {
 
 				set_transient(self::SETTING_KEY_ADVANCED, $advanced, self::CACHE_PERIOD);
 			}
+			$advanced = wp_parse_args($advanced, self::$default_advanced_settings);
 			return $advanced;
 		}
 

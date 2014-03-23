@@ -9,8 +9,8 @@ Author URI: http://nathalielussier.com/
 Author: Robin Li
 Requires at least: 2.3
 Tested up to: 3.8
-Version: 1.1.0
-Stable tag: 1.1.0
+Version: 1.1.1
+Stable tag: 1.1.1
 License: http://opensource.org/licenses/Artistic-2.0
 
 PopupAlly allows you to create advanced popup signup forms in under 5 minutes without the need to deal with messy code.
@@ -31,6 +31,9 @@ Want to increase your subscriber base? Exit-intent popups allow you to capture l
 4. Control exactly when and where the popup will appear!
 
 == Changelog ==
+
+= 1.1.1 =
+* Define submit button height to be auto.
 
 = 1.1.0 =
 * Upgrade interface for better page/post selection.
@@ -56,6 +59,9 @@ Want to increase your subscriber base? Exit-intent popups allow you to capture l
 * Initial release.
 
 == Upgrade Notice ==
+
+= 1.1.1 =
+* Define submit button height to be auto.
 
 = 1.1.0 =
 * Improves page/post selection on Display Setting. Fixes minor style issues when conflict with existing CSS. Add non-inline mode for themes that do not implement the wp_head function.

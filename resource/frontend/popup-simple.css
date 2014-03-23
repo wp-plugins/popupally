@@ -78,6 +78,7 @@ padding:15px 0;
 margin: 10px auto;
 box-sizing:border-box;
 -moz-box-sizing:border-box;
+height:auto;
 }
 .fancybox-inner-sxzw-{{num}} .submit-sxzw:hover {
 background-color:{{subscribe-button-color}};
