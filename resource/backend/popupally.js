@@ -10,7 +10,7 @@ var PlatformAllyDependencyBinder = (function() {
 			if(0 > $.inArray(dependency_name, bound_dependency_elements)) {
 				bound_dependency_elements.push(dependency_name);
 
-				$('#' + dependency_name).live('change click', function(event) {
+				$('#' + dependency_name).on('change click', function(event) {
 					var $element = $(this);
 
 					var value = 'false';
