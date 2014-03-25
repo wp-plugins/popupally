@@ -54,9 +54,9 @@
 				<div>
 					<fieldset class="popupally-fieldset popupally-style-preview">
 						<legend>Preview</legend>
-						<div id="popup-box-preview-<?php echo $id; ?>" class="fancybox-outer-sxzw">
-							<div class="fancybox-inner-sxzw">
-								<div class="fancybox-center-sxzw">
+						<div id="popup-box-preview-<?php echo $id; ?>" class="popupally-outer-sxzw">
+							<div class="popupally-inner-sxzw">
+								<div class="popupally-center-sxzw">
 									<div class="desc-sxzw customizable-color-text-<?php echo $id; ?>" style="cursor: pointer;" id="preview-headline-<?php echo $id; ?>"></div>
 									<div class="logo-row-sxzw" id="logo-row-<?php echo $id; ?>">
 										<div class="clear-sxzw"></div>

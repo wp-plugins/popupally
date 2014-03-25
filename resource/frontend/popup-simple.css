@@ -1,8 +1,8 @@
 .clear-sxzw {clear: both; height:0px; width: 100;}
-.fancybox-overlay-sxzw-{{num}} {width:100%;height:100%;overflow:auto;overflow-y:scroll;position:fixed;bottom:0;right:0;display:none;background-color:rgba(80,80,80,0.5);}
-.fancybox-opened-sxzw-{{num}} {display:block !important;z-index:9999;}
+.popupally-overlay-sxzw-{{num}} {width:100%;height:100%;overflow:auto;overflow-y:scroll;position:fixed;bottom:0;right:0;display:none;background-color:rgba(80,80,80,0.5);}
+.popupally-opened-sxzw-{{num}} {display:block !important;z-index:9999;}
 
-.fancybox-outer-sxzw-{{num}} {
+.popupally-outer-sxzw-{{num}} {
 position:absolute;
 top:20%;
 left:50%;
@@ -16,15 +16,15 @@ box-shadow: 0 10px 25px rgba(0,0,0,0.5);
 -moz-border-radius: 4px;
 border-radius: 4px;
 }
-.fancybox-inner-sxzw-{{num}}{overflow:visible;height:auto;padding:20px;text-align:center;}
-.fancybox-inner-sxzw-{{num}} .content-sxzw {
+.popupally-inner-sxzw-{{num}}{overflow:visible;height:auto;padding:20px;text-align:center;}
+.popupally-inner-sxzw-{{num}} .content-sxzw {
 text-align: center;
 vertical-align: middle;
 width:100%;
 box-sizing:border-box;
 -moz-box-sizing:border-box;
 }
-.fancybox-inner-sxzw-{{num}} .desc-sxzw {
+.popupally-inner-sxzw-{{num}} .desc-sxzw {
 font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
 font-size: 28px;
 line-height: 30px;
@@ -36,7 +36,7 @@ box-sizing:border-box;
 -moz-box-sizing:border-box;
 cursor: pointer;
 }
-.fancybox-inner-sxzw-{{num}} .field-sxzw {
+.popupally-inner-sxzw-{{num}} .field-sxzw {
 display:block;
 padding:15px 12px;
 margin:0 auto 10px auto;
@@ -56,7 +56,7 @@ box-sizing:border-box;
 -moz-box-sizing:border-box;
 height:auto;
 }
-.fancybox-inner-sxzw-{{num}} .submit-sxzw {
+.popupally-inner-sxzw-{{num}} .submit-sxzw {
 font-family: Arial, Helvetica, sans-serif;
 font-size: 22px;
 line-height:27px;
@@ -80,11 +80,11 @@ box-sizing:border-box;
 -moz-box-sizing:border-box;
 height:auto;
 }
-.fancybox-inner-sxzw-{{num}} .submit-sxzw:hover {
+.popupally-inner-sxzw-{{num}} .submit-sxzw:hover {
 background-color:{{subscribe-button-color}};
 color:{{subscribe-button-text-color}};
 }
-.fancybox-inner-sxzw-{{num}} .privacy-sxzw{
+.popupally-inner-sxzw-{{num}} .privacy-sxzw{
 font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
 font-size:14px;
 line-height:14px;
@@ -95,8 +95,8 @@ padding:0;
 box-sizing:border-box;
 -moz-box-sizing:border-box;
 }
-.fancybox-outer-sxzw-{{num}} .fancybox-close-sxzw:link, .fancybox-close-sxzw:visited, .fancybox-close-sxzw:hover, .fancybox-close-sxzw:active{text-decoration:none;}
-.fancybox-outer-sxzw-{{num}} .fancybox-close-sxzw {
+.popupally-outer-sxzw-{{num}} .popupally-close-sxzw:link, .popupally-close-sxzw:visited, .popupally-close-sxzw:hover, .popupally-close-sxzw:active{text-decoration:none;}
+.popupally-outer-sxzw-{{num}} .popupally-close-sxzw {
 font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 display: block;
 font-size: 16px;
@@ -117,18 +117,18 @@ border: 2pt solid white;
 -moz-border-radius: 18pt;
 border-radius: 18pt;
 }
-.fancybox-inner-sxzw-{{num}} .logo-row-sxzw {
+.popupally-inner-sxzw-{{num}} .logo-row-sxzw {
 margin: 20px 0;
 display: {{display-logo-row}};
 }
-.fancybox-inner-sxzw-{{num}} .logo-img-sxzw {
+.popupally-inner-sxzw-{{num}} .logo-img-sxzw {
 height: 120px;
 margin: 0 20px 0 0;
 float: left;
 display: {{display-logo-img}};
 }
 
-.fancybox-inner-sxzw-{{num}} .logo-text-sxzw {
+.popupally-inner-sxzw-{{num}} .logo-text-sxzw {
 height: 100%;
 width: 100%;
 vertical-align: top;
@@ -143,22 +143,22 @@ box-sizing:border-box;
 -moz-box-sizing:border-box;
 }
 @media (max-width: 768px) {
-	.fancybox-outer-sxzw-{{num}}{width:480px;margin-left:-240px;}
-	.fancybox-inner-sxzw-{{num}} .desc-sxzw{font-size:24px;line-height:26px;}
-	.fancybox-inner-sxzw-{{num}} .field-sxzw {padding:10px 10px;font-size: 12px;line-height: 18px;margin-bottom:7px;}
-	.fancybox-inner-sxzw-{{num}} .submit-sxzw {font-size: 18px;padding:10px 0;margin-top:8px;margin-bottom:8px;}
-	.fancybox-inner-sxzw-{{num}} .privacy-sxzw{font-size:10px;line-height:10px;}
-	.fancybox-inner-sxzw-{{num}} .logo-row-sxzw {height:80px;margin:15px 0;}
-	.fancybox-inner-sxzw-{{num}} .logo-img-sxzw {height:80px;width:80px;margin:0 15px 0 0;}
-	.fancybox-inner-sxzw-{{num}} .logo-text-sxzw {font-size:20px;line-height:22px;}
+	.popupally-outer-sxzw-{{num}}{width:480px;margin-left:-240px;}
+	.popupally-inner-sxzw-{{num}} .desc-sxzw{font-size:24px;line-height:26px;}
+	.popupally-inner-sxzw-{{num}} .field-sxzw {padding:10px 10px;font-size: 12px;line-height: 18px;margin-bottom:7px;}
+	.popupally-inner-sxzw-{{num}} .submit-sxzw {font-size: 18px;padding:10px 0;margin-top:8px;margin-bottom:8px;}
+	.popupally-inner-sxzw-{{num}} .privacy-sxzw{font-size:10px;line-height:10px;}
+	.popupally-inner-sxzw-{{num}} .logo-row-sxzw {height:80px;margin:15px 0;}
+	.popupally-inner-sxzw-{{num}} .logo-img-sxzw {height:80px;width:80px;margin:0 15px 0 0;}
+	.popupally-inner-sxzw-{{num}} .logo-text-sxzw {font-size:20px;line-height:22px;}
 }
 @media (max-width: 520px) {
-	.fancybox-outer-sxzw-{{num}}{width:300px;margin-left:-150px;}
-	.fancybox-inner-sxzw-{{num}} .desc-sxzw{font-size:18px;line-height:20px;}
-	.fancybox-inner-sxzw-{{num}} .field-sxzw {padding:10px 6px;font-size: 10px;line-height: 14px;margin-bottom:5px;}
-	.fancybox-inner-sxzw-{{num}} .submit-sxzw {font-size: 16px;padding:8px 0;margin-top:4px;margin-bottom:4px;}
-	.fancybox-inner-sxzw-{{num}} .privacy-sxzw{font-size:8px;line-height:8px;}
-	.fancybox-inner-sxzw-{{num}} .logo-row-sxzw {height:60px;margin:10px 0;}
-	.fancybox-inner-sxzw-{{num}} .logo-img-sxzw {height:60px;width:60px;margin:0 10px 0 0;}
-	.fancybox-inner-sxzw-{{num}} .logo-text-sxzw {font-size:12px;line-height:14px;}
+	.popupally-outer-sxzw-{{num}}{width:300px;margin-left:-150px;}
+	.popupally-inner-sxzw-{{num}} .desc-sxzw{font-size:18px;line-height:20px;}
+	.popupally-inner-sxzw-{{num}} .field-sxzw {padding:10px 6px;font-size: 10px;line-height: 14px;margin-bottom:5px;}
+	.popupally-inner-sxzw-{{num}} .submit-sxzw {font-size: 16px;padding:8px 0;margin-top:4px;margin-bottom:4px;}
+	.popupally-inner-sxzw-{{num}} .privacy-sxzw{font-size:8px;line-height:8px;}
+	.popupally-inner-sxzw-{{num}} .logo-row-sxzw {height:60px;margin:10px 0;}
+	.popupally-inner-sxzw-{{num}} .logo-img-sxzw {height:60px;width:60px;margin:0 10px 0 0;}
+	.popupally-inner-sxzw-{{num}} .logo-text-sxzw {font-size:12px;line-height:14px;}
 }

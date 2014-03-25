@@ -1,7 +1,7 @@
-<div id="popup-box-sxzw-{{num}}" class="fancybox-overlay-sxzw-{{num}} popup-click-close-trigger-{{num}}">
-	<div class="fancybox-outer-sxzw-{{num}}">
-		<div class="fancybox-inner-sxzw-{{num}}">
-			<div class="fancybox-center-sxzw">
+<div id="popup-box-sxzw-{{num}}" class="popupally-overlay-sxzw-{{num}} popup-click-close-trigger-{{num}}">
+	<div class="popupally-outer-sxzw-{{num}}">
+		<div class="popupally-inner-sxzw-{{num}}">
+			<div class="popupally-center-sxzw">
 				<div class="desc-sxzw">{{headline}}</div>
 				<div class="logo-row-sxzw">
 					<div class="clear-sxzw"></div>
@@ -18,6 +18,6 @@
 				<div class="privacy-sxzw">{{privacy-text}}</div>
 			</div>
 		</div>
-		<a title="Close" class="fancybox-close-sxzw popup-click-close-trigger-{{num}}" href="#">x</a>
+		<a title="Close" class="popupally-close-sxzw popup-click-close-trigger-{{num}}" href="#">x</a>
 	</div>
 </div>
