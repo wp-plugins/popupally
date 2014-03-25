@@ -9,8 +9,8 @@ Author URI: http://nathalielussier.com/
 Author: Robin Li
 Requires at least: 2.3
 Tested up to: 3.8
-Version: 1.1.3
-Stable tag: 1.1.3
+Version: 1.1.4
+Stable tag: 1.1.4
 License: http://opensource.org/licenses/Artistic-2.0
 
 PopupAlly allows you to create advanced popup signup forms in under 5 minutes without the need to deal with messy code.
@@ -31,6 +31,9 @@ Want to increase your subscriber base? Exit-intent popups allow you to capture l
 4. Control exactly when and where the popup will appear!
 
 == Changelog ==
+
+= 1.1.4 =
+* Use 'bind' instead of 'on' for event handling if the site is using an earlier version of jQuery.
 
 = 1.1.3 =
 * Remove all 'fancybox' string to avoid conflict.
@@ -65,6 +68,9 @@ Want to increase your subscriber base? Exit-intent popups allow you to capture l
 * Initial release.
 
 == Upgrade Notice ==
+
+= 1.1.4 =
+* Only affect sites with pre-1.7 jQuery. No action is required after update.
 
 = 1.1.3 =
 * Remove all 'fancybox' string to avoid conflict. Please re-save 'Style Settings' if 'Do NOT use inline Javascript/CSS' is checked under advanced settings.
