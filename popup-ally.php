@@ -3,7 +3,7 @@
  Plugin Name: PopupAlly
  Plugin URI: http://ambitionally.com/popupally/
  Description: Want to increase your subscriber base? Exit-intent popups allow you to capture lost visitors and have been shown to increase conversion by over 300%. PopupAlly allows you to create advanced popup signup forms in under 5 minutes, even if you don't know code. PopupAlly's visual editor allows you to customize the look-and-feel of your popups with an instant preview, saving you lots of time.
- Version: 1.1.4
+ Version: 1.1.5
  Author: Nathalie Lussier Media Inc.
  Author URI: http://nathalielussier.com/
  */
@@ -12,7 +12,7 @@
 if (!class_exists('PopupAlly')) {
 	class PopupAlly {
 		/// CONSTANTS
-		const VERSION = '1.1.4';
+		const VERSION = '1.1.5';
 
 		const SETTING_KEY_DISPLAY = '_popupally_setting_general';
 		const SETTING_KEY_STYLE = '_popupally_setting_style';
@@ -386,7 +386,7 @@ if (!class_exists('PopupAlly')) {
 					}
 					self::construct_html_parameter_string($display[$id], self::$config_display_settings, $param);
 					self::construct_html_parameter_string($style[$id], self::$config_style_settings, $param);
-					echo '<div class="popupally-configuration" style="display:none;">' . json_encode($param, JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_HEX_AMP) . '</div>';
+					echo '<div class="popupally-configuration" style="display:none;">' . json_encode(self::replace_json_safe_string($param)) . '</div>';
 					echo self::generate_popup_html($id, $style[$id]);
 				}
 			}
@@ -515,6 +515,20 @@ if (!class_exists('PopupAlly')) {
 		// </editor-fold>
 
 		// <editor-fold defaultstate="collapsed" desc="Utlities">
+		private static function replace_json_safe_string($param) {
+			foreach ($param as $key => $value) {
+				if (is_string($value)) {
+					$value = str_replace('&quot;', '"', $value);
+					$value = str_replace('&#039;', "'", $value);
+					$value = str_replace('&lt;', '<', $value);
+					$value = str_replace('&gt;', '>', $value);
+					$value = str_replace('&amp;', '&', $value);
+					$param[$key] = $value;
+				}
+			}
+			return $param;
+		}
+
 		public static function get_display_settings() {
 			$display = get_transient(self::SETTING_KEY_DISPLAY);
 
