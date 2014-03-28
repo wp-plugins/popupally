@@ -9,8 +9,8 @@ Author URI: http://nathalielussier.com/
 Author: Robin Li
 Requires at least: 2.3
 Tested up to: 3.8
-Version: 1.1.5
-Stable tag: 1.1.5
+Version: 1.1.6
+Stable tag: 1.1.6
 License: http://opensource.org/licenses/Artistic-2.0
 
 PopupAlly allows you to create advanced popup signup forms in under 5 minutes without the need to deal with messy code.
@@ -31,6 +31,9 @@ Want to increase your subscriber base? Exit-intent popups allow you to capture l
 4. Control exactly when and where the popup will appear!
 
 == Changelog ==
+
+= 1.1.6 =
+* Specifically define background img for submit button to be none.
 
 = 1.1.5 =
 * Remove second parameter from json_encode so the function works with PHP pre-5.3
@@ -71,6 +74,9 @@ Want to increase your subscriber base? Exit-intent popups allow you to capture l
 * Initial release.
 
 == Upgrade Notice ==
+
+= 1.1.6 =
+* Only affect sites with css background-image defined for input[type="submit"]. No action is required after update.
 
 = 1.1.5 =
 * Only affect sites with PHP version lower than 5.3. No action is required after update.

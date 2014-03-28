@@ -79,10 +79,12 @@ margin: 10px auto;
 box-sizing:border-box;
 -moz-box-sizing:border-box;
 height:auto;
+background-image:none;
 }
 .popupally-inner-sxzw-{{num}} .submit-sxzw:hover {
 background-color:{{subscribe-button-color}};
 color:{{subscribe-button-text-color}};
+background-image:none;
 }
 .popupally-inner-sxzw-{{num}} .privacy-sxzw{
 font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;

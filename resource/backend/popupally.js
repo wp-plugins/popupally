@@ -1,4 +1,4 @@
-var PlatformAllyDependencyBinder = (function() {
+var PopupAllyDependencyBinder = (function() {
 	var self = {}, bound_dependency_elements = [], $ = jQuery;
 
 	self.bind_dependency_elements = function() {
@@ -38,7 +38,7 @@ var PlatformAllyDependencyBinder = (function() {
 })();
 
 jQuery(document).ready(function($) {
-	PlatformAllyDependencyBinder.bind_dependency_elements();
+	PopupAllyDependencyBinder.bind_dependency_elements();
 	$('#add-new-popup').on('click', function(e) {
 		$this.before();
 	});
