@@ -4,24 +4,38 @@ Contributors: rli
 Plugin Name: PopupAlly
 Plugin URI: http://popupally.com/
 Donate link: http://popupally.com/
-Tags: conversion, sign-up form, popup, exit-intent
+Tags: popups, free popups, lightbox, conversion, sign-up form, popup, exit-intent, aweber, email, full page popup, full screen pop, full screen popup, infusionsoft, madmimi, mailchimp,optin, optin popup,pop-up, popup, popup box, popup message, popup window, popups, unblockable, wordpress popup
 Author URI: http://nathalielussier.com/
 Author: Robin Li
 Requires at least: 2.3
 Tested up to: 3.8
-Version: 1.1.6
-Stable tag: 1.1.6
+Version: 1.1.7
+Stable tag: 1.1.7
 License: http://opensource.org/licenses/Artistic-2.0
 
 PopupAlly allows you to create advanced popup signup forms in under 5 minutes without the need to deal with messy code.
 
 == Description ==
-Want to increase your subscriber base? Exit-intent popups allow you to capture lost visitors and have been shown to increase conversion by over 300%. PopupAlly allows you to create advanced popup signup forms in under 5 minutes, even if you don't know code. PopupAlly's visual editor allows you to customize the look-and-feel of your popups with an instant preview, saving you lots of time.
+If you're looking to grow your list, then PopupAlly is the no-fluff free WordPress popup plugin for you. With built-in advanced features this lightbox popup plugin allows you to build your list as people are about to exit your website. Exit-intent popups allow you to capture lost visitors and have been shown to increase conversion by over 300%. PopupAlly allows you to create advanced popup signup forms in under 5 minutes, even if you don't know code. PopupAlly's visual editor allows you to customize the look-and-feel of your popups with an instant preview, saving you lots of time.
+
+= PopupAlly Free WordPess Popup Plugin Is Compatible With =
+Aweber, MailChimp, MadMimi, iContact, GetResponse, Infusionsoft, and Ontraport email marketing systems.
+
+= Get PopupAlly Step by Step Tutorials =
+This simple popup plugin is pretty intuitive, but we've also written [extensive step-by-step tutorials](http://ambitionally.com/popupally/tutorials/) to help you get up and running faster so you can get back to business.
+
+With PopupAlly you can easily customize the look and feel of your lightbox popup, starting with the headline text, adding an image, and changing the colors to match your website's design. Then you decide if you want the popups to appear after a timed delay, or right before someone is about to leave your site. You also decide how often your popup should re-appear if someone closes it, so it doesn't annoy your visitors!
+
+= Increase Your List More in 30 Days Or Less =
+With the help of this free WordPress popup plugin you'll be well on your way to growing your list faster than ever before. But don't stop there, go ahead and join the [free 30 Day List Building Challenge](http://30daylistbuildingchallenge.com) and see what's possible when you start to apply these additional list building strategies. 
+
+Download AmbitionAlly's free WordPress popup plugin and increase your optin subscriber rate today! 
 
 == Installation ==
 
 1. Activate the PopupAlly plugin
 2. Customize the plugin settings through the PopupAlly menu group
+3. Follow the rest of the [step-by-step tutorials here](http://ambitionally.com/popupally/tutorials/) 
 
 == Screenshots ==
 
@@ -31,6 +45,9 @@ Want to increase your subscriber base? Exit-intent popups allow you to capture l
 4. Control exactly when and where the popup will appear!
 
 == Changelog ==
+
+= 1.1.7 =
+* Update readme file
 
 = 1.1.6 =
 * Specifically define background img for submit button to be none.
@@ -74,6 +91,9 @@ Want to increase your subscriber base? Exit-intent popups allow you to capture l
 * Initial release.
 
 == Upgrade Notice ==
+
+= 1.1.7 =
+* Update readme file
 
 = 1.1.6 =
 * Only affect sites with css background-image defined for input[type="submit"]. No action is required after update.
