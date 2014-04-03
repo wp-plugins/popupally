@@ -3,7 +3,7 @@
  Plugin Name: PopupAlly
  Plugin URI: http://ambitionally.com/popupally/
  Description: Want to increase your subscriber base? Exit-intent popups allow you to capture lost visitors and have been shown to increase conversion by over 300%. PopupAlly allows you to create advanced popup signup forms in under 5 minutes, even if you don't know code. PopupAlly's visual editor allows you to customize the look-and-feel of your popups with an instant preview, saving you lots of time.
- Version: 1.1.7
+ Version: 1.1.8
  Author: Nathalie Lussier Media Inc.
  Author URI: http://nathalielussier.com/
  */
@@ -12,7 +12,7 @@
 if (!class_exists('PopupAlly')) {
 	class PopupAlly {
 		/// CONSTANTS
-		const VERSION = '1.1.7';
+		const VERSION = '1.1.8';
 
 		const SETTING_KEY_DISPLAY = '_popupally_setting_general';
 		const SETTING_KEY_STYLE = '_popupally_setting_style';
@@ -221,7 +221,7 @@ if (!class_exists('PopupAlly')) {
 			$disable = file_get_contents(dirname(__FILE__) . '/resource/frontend/disable.php');
 
 			$pages = get_pages();
-			$posts = get_posts();
+			$posts = get_posts(array('posts_per_page' => -1));
 			include (dirname(__FILE__) . '/resource/backend/setting-display.php');
 		}
 		
