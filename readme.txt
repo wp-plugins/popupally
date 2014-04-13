@@ -46,6 +46,12 @@ Download AmbitionAlly's free WordPress popup plugin and increase your optin subs
 
 == Changelog ==
 
+= 1.2.0 =
+* Add special pages to the popup display settings.
+* Add embedded display option
+* Add template selection to popup style settings.
+* Add "Express yourself" style template.
+
 = 1.1.8 =
 * Fix issue where only 5 posts are shown in Display Setting selections
 
@@ -94,6 +100,9 @@ Download AmbitionAlly's free WordPress popup plugin and increase your optin subs
 * Initial release.
 
 == Upgrade Notice ==
+
+= 1.2.0 =
+* Added display options and style templates. The changes do not affect existing set up.
 
 = 1.1.8 =
 * Fix issue where only 5 posts are shown in Display Setting selections. No action is required after update.

@@ -3,7 +3,7 @@
  Plugin Name: PopupAlly
  Plugin URI: http://ambitionally.com/popupally/
  Description: Want to increase your subscriber base? Exit-intent popups allow you to capture lost visitors and have been shown to increase conversion by over 300%. PopupAlly allows you to create advanced popup signup forms in under 5 minutes, even if you don't know code. PopupAlly's visual editor allows you to customize the look-and-feel of your popups with an instant preview, saving you lots of time.
- Version: 1.1.8
+ Version: 1.2.0
  Author: Nathalie Lussier Media Inc.
  Author URI: http://nathalielussier.com/
  */
@@ -12,7 +12,7 @@
 if (!class_exists('PopupAlly')) {
 	class PopupAlly {
 		/// CONSTANTS
-		const VERSION = '1.1.8';
+		const VERSION = '1.2.0';
 
 		const SETTING_KEY_DISPLAY = '_popupally_setting_general';
 		const SETTING_KEY_STYLE = '_popupally_setting_style';
@@ -25,6 +25,10 @@ if (!class_exists('PopupAlly')) {
 
 		// CACHE
 		const CACHE_PERIOD = 86400;
+
+		const TEMPLATE_DIRECTORY = 'template';
+
+		public static $available_templates = array();
 		
 		private static $default_popup_display_settings = null;
 		private static $default_popup_style_simple_settings = null;
@@ -32,24 +36,13 @@ if (!class_exists('PopupAlly')) {
 		private static $default_style_settings = null;
 		private static $default_advanced_settings = null;
 
-		private static $simple_popup_html_template = null;
-		private static $simple_popup_css_template = null;
-
 		// used for parameter parsing
 		private static $config_display_settings = array('cookie-duration');
 		private static $config_style_settings = array('popup-selector', 'popup-class', 'cookie-name', 'close-trigger');
 
-		// used for simple template replace
-		private static $simple_template_css_mapping = array('background-color', 'text-color',
-			'subscribe-button-color', 'subscribe-button-text-color',
-			'display-headline', 'display-logo-row', 'display-logo-img', 'display-privacy');
-		private static $simple_template_html_mapping = array('image-url',
-			'subscribe-button-text', 'sign-up-form-action', 'sign-up-form-name-field',
-			'sign-up-form-email-field');
-		private static $simple_template_no_escape_html_mapping = array('headline', 'sales-text', 'privacy-text');
-
 		public static function init() {
 			self::add_actions();
+			self::load_templates();
 			self::initialize_defaults();
 
 			register_activation_hook(__FILE__, array(__CLASS__, 'do_activation_actions'));
@@ -94,15 +87,22 @@ if (!class_exists('PopupAlly')) {
 				add_action('admin_init', array(__CLASS__, 'register_settings'));
 			}
 
+			add_action('init', array(__CLASS__, 'add_filters'));
 			add_action('wp_enqueue_scripts', array(__CLASS__, 'enqueue_resources'));
 			add_action('wp_head', array(__CLASS__, 'add_popup_scripts'));
 			add_action('wp_footer', array(__CLASS__, 'add_popup_html'));
+		}
+
+		public static function add_filters() {
+			add_filter('the_content', array(__CLASS__, 'add_form_to_content'));
 		}
 
 		private static function initialize_defaults() {
 			self::$default_popup_display_settings = array('timed' => 'false',
 				'timed-popup-delay' => -1,
 				'enable-exit-intent-popup' => 'false',
+				'enable-embedded' => 'false',
+				'embedded-location' => 'none',
 				'show-all' => 'false',
 				'include' => array(),
 				'exclude' => array(),
@@ -113,23 +113,14 @@ if (!class_exists('PopupAlly')) {
 				'sign-up-form-action' => '',
 				'sign-up-form-name-field' => '',
 				'sign-up-form-email-field' => '',
-				'headline' => "Enter your name and email and get the weekly newsletter... it's FREE!",
-				'sales-text' => 'Introduce yourself and your program',
-				'subscribe-button-text' => 'Subscribe',
-				'privacy-text' => 'Your information will *never* be shared or sold to a 3rd party.',
-				'background-color' => '#fefefe',
-				'text-color' => '#444444',
-				'subscribe-button-color' => '#00c98d',
-				'subscribe-button-text-color' => '#ffffff',
-				'display-headline' => 'block',
-				'display-logo-row' => 'block',
-				'display-logo-img' => 'block',
-				'display-privacy' => 'block',
-				'image-url' => '/wp-admin/images/w-logo-blue.png',
+				'selected-template' => 'bxsjbi',
 				'popup-selector' => '#popup-box-sxzw-{{num}}',
 				'popup-class' => 'popupally-opened-sxzw-{{num}}',
 				'cookie-name' => 'popupally-cookie-{{num}}',
 				'close-trigger' => '.popup-click-close-trigger-{{num}}');
+				foreach (self::$available_templates as $template) {
+					self::$default_popup_style_simple_settings = array_merge(self::$default_popup_style_simple_settings, $template->default_values);
+				}
 			self::$default_display_settings = array(1 => self::$default_popup_display_settings, 2 => self::$default_popup_display_settings);
 			self::$default_style_settings = array(1 => self::customize_parameter_array(self::$default_popup_style_simple_settings, 1),
 				2 => self::customize_parameter_array(self::$default_popup_style_simple_settings, 2));
@@ -166,7 +157,9 @@ if (!class_exists('PopupAlly')) {
 			if (strpos($hook, '_popupally_setting_') !== false) {
 				wp_enqueue_style('wp-color-picker');
 				wp_enqueue_style('popupally-backend', plugin_dir_url(__FILE__) . 'resource/backend/popupally.css', false, self::VERSION);
-				wp_enqueue_style('popupally-backend-preview', plugin_dir_url(__FILE__) . 'resource/backend/popup-simple-preview.css', false, self::VERSION);
+				foreach(self::$available_templates as $template_uid => $template_obj) {
+					wp_enqueue_style('popupally-backend-preview-' . $template_uid, $template_obj->backend_css, false, self::VERSION);
+				}
 
 				wp_enqueue_script( 'wp-color-picker' );
 				wp_enqueue_script('popupally-backend', plugin_dir_url(__FILE__) . 'resource/backend/popupally.js', array('jquery', 'wp-color-picker'), self::VERSION);
@@ -175,6 +168,53 @@ if (!class_exists('PopupAlly')) {
 					array( 'setting_variable' => self::SETTING_KEY_STYLE));
 			}
 		}
+
+		// <editor-fold defaultstate="collapsed" desc="Templates">
+		public static function add_template($template) {
+			self::$available_templates[$template->uid] = $template;
+		}
+
+		public static function compare_template_order($a, $b)
+		{
+			if ($a->template_order == $b->template_order) {
+				return 0;
+			}
+			return ($a->template_order < $b->template_order) ? -1 : 1;
+		}
+
+		private static function load_templates() {
+			$folders = scandir(dirname(__FILE__) . '/resource/' .self::TEMPLATE_DIRECTORY);
+			foreach ($folders as $folder) {
+				if ('.' !== $folder && '..' !== $folder ) {
+					include_once(dirname(__FILE__) . '/resource/' . self::TEMPLATE_DIRECTORY . '/' . $folder . '/definition.php');
+				}
+			}
+			uasort(self::$available_templates, array(__CLASS__, 'compare_template_order'));
+		}
+		// </editor-fold>
+
+		// <editor-fold defaultstate="collapsed" desc="Embedded sign up forms">
+		public static function add_form_to_content($content) {
+			if (!is_singular()) {
+				return $content;
+			}
+			$to_show = self::get_popup_to_show();
+			if (!empty($to_show)) {
+				$display = self::get_display_settings();
+				$style = self::get_style_settings();
+				foreach($to_show as $id => $popup_types) {
+					if (in_array('embedded', $popup_types)) {
+						if ('post-start' === $display[$id]['embedded-location']) {
+							$content = self::generate_popup_html($id, $style[$id], true) . $content;
+						} elseif ('post-end' === $display[$id]['embedded-location']) {
+							$content = $content . self::generate_popup_html($id, $style[$id], true);
+						}
+					}
+				}
+			}
+			return $content;
+		}
+		// </editor-fold>
 
 		// <editor-fold defaultstate="collapsed" desc="Page meta box">
 		public static function add_meta_box($post_type) {
@@ -222,6 +262,7 @@ if (!class_exists('PopupAlly')) {
 
 			$pages = get_pages();
 			$posts = get_posts(array('posts_per_page' => -1));
+			$categories = get_categories(array('hide_empty' => false));
 			include (dirname(__FILE__) . '/resource/backend/setting-display.php');
 		}
 		
@@ -231,6 +272,7 @@ if (!class_exists('PopupAlly')) {
 			}
 			self::check_php_version('popupally_style');
 			$style = self::get_style_settings();
+			$setting_variable = PopupAlly::SETTING_KEY_STYLE;
 			include (dirname(__FILE__) . '/resource/backend/setting-style-simple.php');
 		}
 		
@@ -262,22 +304,9 @@ if (!class_exists('PopupAlly')) {
 
 			foreach ($input as $id => &$setting) {
 				if (is_int($id)) {
-					if('upload' === $setting['logo-img-action'] && !empty($_FILES['img-file-' . $id]['size'])) {
-						$setting['image-url'] = '';
-
-						$file_upload_result = wp_handle_upload($_FILES['img-file-' . $id], array('test_form' => false));
-						if(!empty($file_upload_result['url'])) {
-							$image_size_result = @getimagesize($file_upload_result['file']);
-							if(false === $image_size_result) {
-								add_settings_error('popupally_style', 'img-upload-error-' . $id, 'Please upload a valid image filetype for Popup #' . $id, 'error');
-							} else {
-								$setting['image-url'] = $file_upload_result['url'];
-							}
-						} else if(!empty($file_upload_result['error'])) {
-							add_settings_error('popupally_style', 'img-upload-error-' . $id, 'File upload error for Popup #' . $id . ': ' . $file_upload_result['error'], 'error');
-						}
+					foreach(self::$available_templates as $template_ob) {
+						$setting = $template_ob->sanitize_style($setting, $id);
 					}
-					unset($setting['logo-img-action']);
 					$setting = wp_parse_args($setting, self::customize_parameter_array(self::$default_popup_style_simple_settings, $id));
 				}
 			}
@@ -388,17 +417,26 @@ if (!class_exists('PopupAlly')) {
 					self::construct_html_parameter_string($style[$id], self::$config_style_settings, $param);
 					echo '<div class="popupally-configuration" style="display:none;">' . json_encode(self::replace_json_safe_string($param)) . '</div>';
 					echo self::generate_popup_html($id, $style[$id]);
+					if (in_array('embedded', $popup_types) && 'page-end' === $display[$id]['embedded-location']) {
+						echo self::generate_popup_html($id, $style[$id], true);
+					}
 				}
 			}
 		}
 
-		private static function generate_popup_html($id, &$setting) {
-			$template = self::get_simple_popup_html_template();
+		private static function generate_popup_html($id, $setting, $embedded = false) {
+			if (isset(self::$available_templates[$setting['selected-template']])) {
+				$template_obj = &self::$available_templates[$setting['selected-template']];
+			} else {
+				$template_obj = &self::$available_templates['bxsjbi'];
+			}
+			$setting = $template_obj->prepare_for_code_generation($setting);
+			$template = self::get_simple_popup_html_template($template_obj, $embedded);
 			$template = str_replace('{{num}}', $id, $template);
-			foreach (self::$simple_template_html_mapping as $replace) {
+			foreach ($template_obj->html_mapping as $replace) {
 				$template = str_replace('{{' . $replace . '}}', esc_attr($setting[$replace]), $template);
 			}
-			foreach (self::$simple_template_no_escape_html_mapping as $replace) {
+			foreach ($template_obj->no_escape_html_mapping as $replace) {
 				$template = str_replace('{{' . $replace . '}}', $setting[$replace], $template);
 			}
 			// generate hidden fields
@@ -420,10 +458,16 @@ if (!class_exists('PopupAlly')) {
 			return $template;
 		}
 
-		private static function generate_popup_css($id, &$setting) {
-			$template = self::get_simple_popup_css_template();
+		private static function generate_popup_css($id, $setting) {
+			if (isset(self::$available_templates[$setting['selected-template']])) {
+				$template_obj = &self::$available_templates[$setting['selected-template']];
+			} else {
+				$template_obj = &self::$available_templates['bxsjbi'];
+			}
+			$setting = $template_obj->prepare_for_code_generation($setting);
+			$template = self::get_simple_popup_css_template($template_obj);
 			$template = str_replace('{{num}}', $id, $template);
-			foreach (self::$simple_template_css_mapping as $replace) {
+			foreach ($template_obj->css_mapping as $replace) {
 				$template = str_replace('{{' . $replace . '}}', $setting[$replace], $template);
 			}
 			return $template;
@@ -451,9 +495,20 @@ if (!class_exists('PopupAlly')) {
 		}
 
 		public static function get_popup_to_show($post_id = false) {
+			$is_front_page = false;
+			$category_id = -1;
 			if ($post_id === false) {
 				global $wp_query;
-				if (isset($wp_query) && isset($wp_query->post)) {
+				if (!isset($wp_query)) {
+					return array();
+				}
+				if ($wp_query->is_home) {
+					$is_front_page = true;
+					$post_type = 'page';
+				} elseif ($wp_query->is_category) {
+					$category_id = $wp_query->queried_object_id;
+					$post_type = 'page';
+				} elseif (isset($wp_query->post)) {
 					$post_id = $wp_query->post->ID;
 					$post_type = $wp_query->post->post_type;
 				} else {
@@ -471,7 +526,7 @@ if (!class_exists('PopupAlly')) {
 			$result = array();
 			$display = self::get_display_settings();
 			foreach ($display as $id => $settings) {
-				if (isset($settings['thank-you'][$post_id])) {
+				if (false !== $post_id && isset($settings['thank-you'][$post_id])) {
 					continue;
 				}
 				$to_show = false;
@@ -482,7 +537,11 @@ if (!class_exists('PopupAlly')) {
 					if (isset($settings['exclude']['all-posts']) && 'post' === $post_type) {
 						continue;
 					}
-					if (!isset($settings['exclude'][$post_id])) {
+					if (false !== $post_id && !isset($settings['exclude'][$post_id])) {
+						$to_show = true;
+					} elseif ($is_front_page && !isset($settings['exclude']['front-page'])) {
+						$to_show = true;
+					} elseif ($category_id >= 0 && !isset($settings['exclude']['category-' . $category_id])) {
 						$to_show = true;
 					}
 				} else {	// include path
@@ -490,7 +549,11 @@ if (!class_exists('PopupAlly')) {
 						$to_show = true;
 					} elseif (isset($settings['include']['all-posts']) && 'post' === $post_type) {
 						$to_show = true;
-					} elseif (isset($settings['include'][$post_id])) {
+					} elseif (false !== $post_id && isset($settings['include'][$post_id])) {
+						$to_show = true;
+					} elseif ($is_front_page && isset($settings['include']['front-page'])) {
+						$to_show = true;
+					} elseif ($category_id >= 0 && isset($settings['include']['category-' . $category_id])) {
 						$to_show = true;
 					}
 				}
@@ -505,6 +568,9 @@ if (!class_exists('PopupAlly')) {
 				if ($exit_intent <= 0 && 'true' === $settings['enable-exit-intent-popup']) {
 					$exit_intent = $id;
 					$row []= 'exit-intent';
+				}
+				if ('true' === $settings['enable-embedded']) {
+					$row []= 'embedded';
 				}
 				if (!empty($row)) {
 					$result[$id] = $row;
@@ -607,18 +673,24 @@ if (!class_exists('PopupAlly')) {
 			return $num;
 		}
 
-		private static function get_simple_popup_html_template() {
-			if (null === self::$simple_popup_html_template) {
-				self::$simple_popup_html_template = file_get_contents(dirname(__FILE__) . '/resource/frontend/popup-simple.php');
+		private static function get_simple_popup_html_template($template_obj, $embedded = false) {
+			if ($embedded) {
+				if (null === $template_obj->popup_embedded_template) {
+					$template_obj->popup_embedded_template = file_get_contents($template_obj->frontend_embedded_php);
+				}
+				return $template_obj->popup_embedded_template;
 			}
-			return self::$simple_popup_html_template;
+			if (null === $template_obj->popup_html_template) {
+				$template_obj->popup_html_template = file_get_contents($template_obj->frontend_php);
+			}
+			return $template_obj->popup_html_template;
 		}
 
-		private static function get_simple_popup_css_template() {
-			if (null === self::$simple_popup_css_template) {
-				self::$simple_popup_css_template = file_get_contents(dirname(__FILE__) . '/resource/frontend/popup-simple.css');
+		private static function get_simple_popup_css_template($template_obj) {
+			if (null === $template_obj->popup_css_template) {
+				$template_obj->popup_css_template = file_get_contents($template_obj->frontend_css);
 			}
-			return self::$simple_popup_css_template;
+			return $template_obj->popup_css_template;
 		}
 
 		private static function construct_html_parameter_string($source, $tags, &$target) {
@@ -656,5 +728,6 @@ if (!class_exists('PopupAlly')) {
 		}
 		// </editor-fold>
 	}
+	require_once(plugin_dir_path(__FILE__) . '/resource/popup-ally-template.php');
 	PopupAlly::init();
 }

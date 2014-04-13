@@ -4,6 +4,7 @@
 			<th style="padding:0 5px;">#</th>
 			<th style="font-size:12px;padding:0 5px;">Time delayed</th>
 			<th style="font-size:12px;padding:0 5px;">Exit intent</th>
+			<th style="font-size:12px;padding:0 5px;">Embedded</th>
 		</tr>
 		<?php foreach($to_show as $id=>$type) { ?>
 		<tr valign="top">
@@ -15,6 +16,9 @@
 			</td>
 			<td>
 				<?php echo in_array('exit-intent', $type) ? '&#x2714;' : ''; ?>
+			</td>
+			<td>
+				<?php echo in_array('embedded', $type) ? '&#x2714;' : ''; ?>
 			</td>
 		</tr>
 		<?php } ?>

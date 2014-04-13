@@ -105,6 +105,7 @@ jQuery(document).ready(function($) {
 		$error.hide();
 		$('.sign-up-form-generated-' + id).remove();
 		if('' == form_code) {
+			$('#sign-up-form-action-' + id).val('');
 			$dependents.hide();
 			$('.sign-up-form-select-' + id).empty();
 			return;
@@ -116,7 +117,8 @@ jQuery(document).ready(function($) {
 			$form = $parsed_form.filter('form');
 		}
 		if(0 == $form.size()) {
-			$error.show().html('A <form> element could not be found in the Sign-up form HTML Code you entered. Please copy the entire HTML code block from your mailing list provider into the Sign-up form HTML field.');
+			$error.show().text('A <form> element could not be found in the Sign-up form HTML Code you entered. Please copy the entire HTML code block from your mailing list provider into the Sign-up form HTML field.');
+			$('#sign-up-form-action-' + id).val('');
 			$dependents.hide();
 			$('.sign-up-form-select-' + id).empty();
 			return;

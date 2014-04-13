@@ -1,5 +1,5 @@
-.clear-sxzw {clear: both; height:0px; width: 100;}
-.popupally-overlay-sxzw-{{num}} {width:100%;height:100%;overflow:auto;overflow-y:scroll;position:fixed;bottom:0;right:0;display:none;background-color:rgba(80,80,80,0.5);}
+.clear-sxzw {clear: both; height:0px; width: 100%;}
+.popupally-overlay-sxzw-{{num}} {width:100%;height:100%;overflow:hidden;position:fixed;bottom:0;right:0;display:none;background-color:rgba(80,80,80,0.5);}
 .popupally-opened-sxzw-{{num}} {display:block !important;z-index:9999;}
 
 .popupally-outer-sxzw-{{num}} {
@@ -15,6 +15,11 @@ box-shadow: 0 10px 25px rgba(0,0,0,0.5);
 -webkit-border-radius: 4px;
 -moz-border-radius: 4px;
 border-radius: 4px;
+}
+.popupally-outer-embedded-sxzw-{{num}} {
+width:650px;
+background-color:{{background-color}};
+margin:0 auto;
 }
 .popupally-inner-sxzw-{{num}}{overflow:visible;height:auto;padding:20px;text-align:center;}
 .popupally-inner-sxzw-{{num}} .content-sxzw {

@@ -38,6 +38,20 @@
 								<input type="checkbox" input-all-false-check="popupally-conditional-display-<?php echo $id; ?>" name="<?php echo PopupAlly::SETTING_KEY_DISPLAY . '[' . $id . ']'; ?>[enable-exit-intent-popup]" <?php checked($setting['enable-exit-intent-popup'], 'true'); ?> value="true"/>
 							</td>
 						</tr>
+						<tr valign="top">
+							<th scope="row">Embedded sign up</th>
+							<td>
+								<input type="checkbox" input-all-false-check="popupally-conditional-display-<?php echo $id; ?>" id="embedded-<?php echo $id; ?>" name="<?php echo PopupAlly::SETTING_KEY_DISPLAY . '[' . $id . ']'; ?>[enable-embedded]" <?php checked($setting['enable-embedded'], 'true'); ?> value="true"/>
+								<label hide-toggle data-dependency="embedded-<?php echo $id; ?>" data-dependency-value="true">Show sign up box at
+									<select name="<?php echo PopupAlly::SETTING_KEY_DISPLAY . '[' . $id . ']'; ?>[embedded-location]">
+										<option <?php selected($setting['embedded-location'], 'none'); ?> value="none">None</option>
+										<option <?php selected($setting['embedded-location'], 'post-start'); ?> value="post-start">start of post/page content</option>
+										<option <?php selected($setting['embedded-location'], 'post-end'); ?> value="post-end">end of post/page content</option>
+										<option <?php selected($setting['embedded-location'], 'page-end'); ?> value="page-end">bottom of the page</option>
+									</select>
+								</label>
+							</td>
+						</tr>
 					</tbody>
 				</table>
 			</fieldset>
@@ -58,6 +72,26 @@
 									<input readonly type="text" class="selected-num-status" update-all-trigger="#include-all-pages-<?php echo $id; ?>" update-num-trigger=".include-page-<?php echo $id; ?>"><label> pages selected</label>
 									<div class="include-selection page-selection-scroll">
 										<input type="checkbox" <?php echo isset($setting['include']['all-pages'])?'checked':''; ?> id="include-all-pages-<?php echo $id; ?>" value="true" name="<?php echo PopupAlly::SETTING_KEY_DISPLAY . '[' . $id . ']'; ?>[include][all-pages]"><label for="include-all-pages-<?php echo $id; ?>">All pages</label>
+										<ul>
+											<li>
+												<label>Special Pages</label>
+												<ul>
+													<li>
+														<input class="include-page-<?php echo $id; ?>" <?php echo isset($setting['include']['front-page'])?'checked':''; ?> id="include-<?php echo $id; ?>-front-page" disable-toggle data-dependency="include-all-pages-<?php echo $id; ?>" data-dependency-value="false" type="checkbox" value="true" name="<?php echo PopupAlly::SETTING_KEY_DISPLAY . '[' . $id . ']'; ?>[include][front-page]"><label for="include-<?php echo $id; ?>-front-page">Front Page</label>
+													</li>
+													<li>
+														<label>Category Pages</label>
+														<ul>
+															<?php foreach ($categories as $category) { ?>
+																<li>
+																	<input class="include-page-<?php echo $id; ?>" <?php echo isset($setting['include']['category-' . $category->cat_ID])?'checked':''; ?> id="include-<?php echo $id; ?>-category-<?php echo $category->cat_ID; ?>" disable-toggle data-dependency="include-all-pages-<?php echo $id; ?>" data-dependency-value="false" type="checkbox" value="true" name="<?php echo PopupAlly::SETTING_KEY_DISPLAY . '[' . $id . ']'; ?>[include][category-<?php echo $category->cat_ID; ?>]"><label for="include-<?php echo $id; ?>-category-<?php echo $category->cat_ID; ?>"><?php echo esc_attr($category->name); ?></label>
+																</li>
+															<?php } ?>
+														</ul>
+													</li>
+												</ul>
+											</li>
+										</ul>
 										<ul>
 										<?php $depth = array();
 										foreach ($pages as $page) {
@@ -119,6 +153,26 @@
 									<input readonly type="text" class="selected-num-status" update-all-trigger="#exclude-all-pages-<?php echo $id; ?>" update-num-trigger=".exclude-page-<?php echo $id; ?>"><label> pages selected</label>
 									<div class="exclude-selection page-selection-scroll">
 										<input type="checkbox" <?php echo isset($setting['exclude']['all-pages'])?'checked':''; ?> id="exclude-all-pages-<?php echo $id; ?>" value="true" name="<?php echo PopupAlly::SETTING_KEY_DISPLAY . '[' . $id . ']'; ?>[exclude][all-pages]"><label for="exclude-all-pages-<?php echo $id; ?>">All pages</label>
+										<ul>
+											<li>
+												<label>Special Pages</label>
+												<ul>
+													<li>
+														<input class="exclude-page-<?php echo $id; ?>" <?php echo isset($setting['exclude']['front-page'])?'checked':''; ?> id="exclude-<?php echo $id; ?>-front-page" disable-toggle data-dependency="exclude-all-pages-<?php echo $id; ?>" data-dependency-value="false" type="checkbox" value="true" name="<?php echo PopupAlly::SETTING_KEY_DISPLAY . '[' . $id . ']'; ?>[exclude][front-page]"><label for="exclude-<?php echo $id; ?>-front-page">Front Page</label>
+													</li>
+													<li>
+														<label>Category Pages</label>
+														<ul>
+															<?php foreach ($categories as $category) { ?>
+																<li>
+																	<input class="exclude-page-<?php echo $id; ?>" <?php echo isset($setting['exclude']['category-' . $category->cat_ID])?'checked':''; ?> id="exclude-<?php echo $id; ?>-category-<?php echo $category->cat_ID; ?>" disable-toggle data-dependency="exclude-all-pages-<?php echo $id; ?>" data-dependency-value="false" type="checkbox" value="true" name="<?php echo PopupAlly::SETTING_KEY_DISPLAY . '[' . $id . ']'; ?>[exclude][category-<?php echo $category->cat_ID; ?>]"><label for="exclude-<?php echo $id; ?>-category-<?php echo $category->cat_ID; ?>"><?php echo esc_attr($category->name); ?></label>
+																</li>
+															<?php } ?>
+														</ul>
+													</li>
+												</ul>
+											</li>
+										</ul>
 										<ul>
 										<?php $depth = array();
 										foreach ($pages as $page) {
@@ -183,9 +237,11 @@
 						<tr valign="top">
 							<th scope="row">Show popup every </th>
 							<td>
-								<input name="<?php echo PopupAlly::SETTING_KEY_DISPLAY . '[' . $id . ']'; ?>[cookie-duration]" type="text" size="4" value="<?php echo $setting['cookie-duration']; ?>"> days<br/>
-								<small><ul>
-										<li>-1: re-appear on every refresh/new page load</li>
+								<input name="<?php echo PopupAlly::SETTING_KEY_DISPLAY . '[' . $id . ']'; ?>[cookie-duration]" type="text" size="4" value="<?php echo $setting['cookie-duration']; ?>"> days. (Recommend '14' days)
+								<br/>
+								<small>
+									<ul>
+										<li>-1: re-appear on every refresh/new page load. <strong>For testing ONLY!</strong></li>
 										<li>0: re-appear after closing and re-opening the browser</li>
 										<li>1+: re-appear after the defined number of days.</li>
 									</ul>
@@ -193,6 +249,12 @@
 							</td>
 						</tr>
 						<tr valign="top">
+							<th scope="row">Show Thank You Page Setup</th>
+							<td>
+								<input <?php if (!empty($setting['thank-you'])) {echo 'checked';} ?> type="checkbox" value="true" id="show-thank-you-setup-<?php echo $id; ?>" /> (Advanced functionality. Make sure to read the <a href="/popupally/tutorial/thank-you-page-setup">Thank You Page Setup Tutorial</a> before enabling.)
+							</td>
+						</tr>
+						<tr valign="top" hide-toggle data-dependency="show-thank-you-setup-<?php echo $id; ?>" data-dependency-value="true">
 							<th scope="row">Thank you page after signing-up</th>
 							<td>
 								<input readonly type="text" class="selected-num-status" update-num-trigger=".thank-you-page-<?php echo $id; ?>"><label> pages selected</label>
@@ -237,7 +299,7 @@
 								</div>
 							</td>
 						</tr>
-						<tr valign="top">
+						<tr valign="top" hide-toggle data-dependency="show-thank-you-setup-<?php echo $id; ?>" data-dependency-value="true">
 							<th scope="row">Or you can put the following script on the thank you page (need to be hosted on <?php $url_info = parse_url(get_bloginfo('wpurl')); echo esc_attr($url_info['host']); ?>)</th>
 							<td>
 								<textarea class="full-width" rows="4" readonly><?php echo esc_attr(str_replace('##cookie_name##', $style[$id]['cookie-name'], $disable)); ?></textarea>
