@@ -157,7 +157,7 @@ box-sizing:border-box;
 	.popupally-inner-sxzw-{{num}} .submit-sxzw {font-size: 18px;padding:10px 0;margin-top:8px;margin-bottom:8px;}
 	.popupally-inner-sxzw-{{num}} .privacy-sxzw{font-size:10px;line-height:10px;}
 	.popupally-inner-sxzw-{{num}} .logo-row-sxzw {height:80px;margin:15px 0;}
-	.popupally-inner-sxzw-{{num}} .logo-img-sxzw {height:80px;width:80px;margin:0 15px 0 0;}
+	.popupally-inner-sxzw-{{num}} .logo-img-sxzw {height:80px;margin:0 15px 0 0;}
 	.popupally-inner-sxzw-{{num}} .logo-text-sxzw {font-size:20px;line-height:22px;}
 }
 @media (max-width: 520px) {
@@ -168,6 +168,6 @@ box-sizing:border-box;
 	.popupally-inner-sxzw-{{num}} .submit-sxzw {font-size: 16px;padding:8px 0;margin-top:4px;margin-bottom:4px;}
 	.popupally-inner-sxzw-{{num}} .privacy-sxzw{font-size:8px;line-height:8px;}
 	.popupally-inner-sxzw-{{num}} .logo-row-sxzw {height:60px;margin:10px 0;}
-	.popupally-inner-sxzw-{{num}} .logo-img-sxzw {height:60px;width:60px;margin:0 10px 0 0;}
+	.popupally-inner-sxzw-{{num}} .logo-img-sxzw {height:60px;margin:0 10px 0 0;}
 	.popupally-inner-sxzw-{{num}} .logo-text-sxzw {font-size:12px;line-height:14px;}
 }
