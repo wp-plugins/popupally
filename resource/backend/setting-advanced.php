@@ -22,10 +22,10 @@
 				<table class="form-table form-table-popupally-style-integration">
 					<tbody>
 						<tr valign="top">
-							<th scope="row">Do NOT use inline Javascript/CSS</th>
+							<th scope="row"><label for="no-inline-checkbox">Do NOT use inline Javascript/CSS</label></th>
 							<td>
-								<input type="checkbox" name="<?php echo PopupAlly::SETTING_KEY_ADVANCED; ?>[no-inline]" <?php checked($advanced['no-inline'], 'true'); ?> value="true"/>
-								<small>Enabling this option is NOT recommended, as it can affect performance. Only enable if your theme does not implement the 'wp_head' function.</small>
+								<input id="no-inline-checkbox" type="checkbox" name="<?php echo PopupAlly::SETTING_KEY_ADVANCED; ?>[no-inline]" <?php checked($advanced['no-inline'], 'true'); ?> value="true"/>
+								<label for="no-inline-checkbox"><small>Enabling this option is NOT recommended, as it can affect performance. Only enable if your theme does not implement the 'wp_head' function.</small></label>
 							</td>
 						</tr>
 					</tbody>

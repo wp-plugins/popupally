@@ -104,7 +104,7 @@ background-image:none;
 top:{{plsbvs-subscribe-button-top}}px;
 left:{{plsbvs-subscribe-button-left}}px;
 }
-.popupally-outer-plsbvs-{{num}} .popupally-close-plsbvs:link, .popupally-close-plsbvs:visited, .popupally-close-plsbvs:hover, .popupally-close-plsbvs:active{text-decoration:none;}
+.popupally-outer-plsbvs-{{num}} .popupally-close-plsbvs:link, .popupally-outer-plsbvs-{{num}} .popupally-close-plsbvs:visited, .popupally-outer-plsbvs-{{num}} .popupally-close-plsbvs:hover, .popupally-outer-plsbvs-{{num}} .popupally-close-plsbvs:active{text-decoration:none;}
 .popupally-outer-plsbvs-{{num}} .popupally-close-plsbvs {
 font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 display: block;

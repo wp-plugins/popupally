@@ -251,7 +251,7 @@
 						<tr valign="top">
 							<th scope="row">Show Thank You Page Setup</th>
 							<td>
-								<input <?php if (!empty($setting['thank-you'])) {echo 'checked';} ?> type="checkbox" value="true" id="show-thank-you-setup-<?php echo $id; ?>" /> (Advanced functionality. Make sure to read the <a href="/popupally/tutorial/thank-you-page-setup">Thank You Page Setup Tutorial</a> before enabling.)
+								<input <?php if (!empty($setting['thank-you'])) {echo 'checked';} ?> type="checkbox" value="true" id="show-thank-you-setup-<?php echo $id; ?>" /> (Advanced functionality. Make sure to read the <a href="http://ambitionally.com/popupally/tutorial/thank-you-page-setup">Thank You Page Setup Tutorial</a> before enabling.)
 							</td>
 						</tr>
 						<tr valign="top" hide-toggle data-dependency="show-thank-you-setup-<?php echo $id; ?>" data-dependency-value="true">
