@@ -9,8 +9,8 @@ Author URI: http://nathalielussier.com/
 Author: Robin Li
 Requires at least: 2.3
 Tested up to: 3.8
-Version: 1.2.4
-Stable tag: 1.2.4
+Version: 1.2.5
+Stable tag: 1.2.5
 License: http://opensource.org/licenses/Artistic-2.0
 
 PopupAlly allows you to create advanced popup signup forms in under 5 minutes without the need to deal with messy code.
@@ -45,6 +45,9 @@ Download AmbitionAlly's free WordPress popup plugin and increase your optin subs
 4. Control exactly when and where the popup will appear!
 
 == Changelog ==
+
+= 1.2.5 =
+* Fix default template introduction text row height issue for mobile display.
 
 = 1.2.4 =
 * Fix thank you page setup link
@@ -112,6 +115,9 @@ Download AmbitionAlly's free WordPress popup plugin and increase your optin subs
 * Initial release.
 
 == Upgrade Notice ==
+
+= 1.2.5 =
+* Fix default template introduction text row height issue for mobile display. No action is required after update.
 
 = 1.2.4 =
 * Fix thank you page setup link. No action is required after update.
