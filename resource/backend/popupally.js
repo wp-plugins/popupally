@@ -48,7 +48,9 @@ jQuery(document).ready(function($) {
 			$(this).trigger("propertychange");
 		}
 	};
-	$('.color-picker-input').wpColorPicker(colorPickerOptions);
+	if (!!$.prototype.wpColorPicker) {
+		$('.nqpc-picker-input-iyxm').wpColorPicker(colorPickerOptions);
+	}
 	$("[click-target][click-value]").on('click', function(e) {
 		var selector = $(this).attr('click-target');
 		$(selector).val($(this).attr('click-value')).change();

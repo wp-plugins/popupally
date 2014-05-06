@@ -22,7 +22,7 @@
 		<tbody>
 			<tr valign="top">
 				<th scope="row">Background color</th>
-				<td><input size="8" class="color-picker-input" name="<?php echo $setting_variable . '[' . $id . ']'; ?>[plsbvs-background-color]" type="text" value="<?php echo $setting['plsbvs-background-color']; ?>" preview-update-target-css="#plsbvs-popup-box-preview-<?php echo $id; ?>" preview-update-target-css-property="background-color" data-default-color="#d3d3d3"></td>
+				<td><input size="8" class="nqpc-picker-input-iyxm" name="<?php echo $setting_variable . '[' . $id . ']'; ?>[plsbvs-background-color]" type="text" value="<?php echo $setting['plsbvs-background-color']; ?>" preview-update-target-css="#plsbvs-popup-box-preview-<?php echo $id; ?>" preview-update-target-css-property="background-color" data-default-color="#d3d3d3"></td>
 			</tr>
 			<tr valign="top" hide-toggle data-dependency="plsbvs-background-img-<?php echo $id; ?>" data-dependency-value="upload">
 				<th scope="row">Background Image<br />
@@ -59,7 +59,7 @@
 			</tr>
 			<tr valign="top">
 				<th scope="row">Headline color</th>
-				<td><input size="8" class="color-picker-input" name="<?php echo $setting_variable . '[' . $id . ']'; ?>[plsbvs-text-color]" type="text" value="<?php echo $setting['plsbvs-text-color']; ?>" preview-update-target-css=".plsbvs-customizable-color-text-<?php echo $id; ?>" preview-update-target-css-property="color" data-default-color="#444444"></td>
+				<td><input size="8" class="nqpc-picker-input-iyxm" name="<?php echo $setting_variable . '[' . $id . ']'; ?>[plsbvs-text-color]" type="text" value="<?php echo $setting['plsbvs-text-color']; ?>" preview-update-target-css=".plsbvs-customizable-color-text-<?php echo $id; ?>" preview-update-target-css-property="color" data-default-color="#444444"></td>
 			</tr>
 			<tr valign="top">
 				<th scope="row">Headline (HTML code allowed)</th>
@@ -136,10 +136,10 @@
 			<tr valign="top">
 				<th scope="row">Subscribe Button Color</th>
 				<td>
-					<input size="8" class="color-picker-input" name="<?php echo $setting_variable . '[' . $id . ']'; ?>[plsbvs-subscribe-button-color]" type="text" value="<?php echo $setting['plsbvs-subscribe-button-color']; ?>" preview-update-target-css="#plsbvs-subscribe-button-<?php echo $id; ?>" preview-update-target-css-property="background-color" data-default-color="#00c98d">
+					<input size="8" class="nqpc-picker-input-iyxm" name="<?php echo $setting_variable . '[' . $id . ']'; ?>[plsbvs-subscribe-button-color]" type="text" value="<?php echo $setting['plsbvs-subscribe-button-color']; ?>" preview-update-target-css="#plsbvs-subscribe-button-<?php echo $id; ?>" preview-update-target-css-property="background-color" data-default-color="#00c98d">
 					<div class="popupally-style-same-line-block">
 						<strong class="popupally-style-same-line-label">Subscribe Button Text Color</strong>
-						<input size="8" class="color-picker-input" name="<?php echo $setting_variable . '[' . $id . ']'; ?>[plsbvs-subscribe-button-text-color]" type="text" value="<?php echo $setting['plsbvs-subscribe-button-text-color']; ?>" preview-update-target-css="#plsbvs-subscribe-button-<?php echo $id; ?>" preview-update-target-css-property="color" data-default-color="#ffffff">
+						<input size="8" class="nqpc-picker-input-iyxm" name="<?php echo $setting_variable . '[' . $id . ']'; ?>[plsbvs-subscribe-button-text-color]" type="text" value="<?php echo $setting['plsbvs-subscribe-button-text-color']; ?>" preview-update-target-css="#plsbvs-subscribe-button-<?php echo $id; ?>" preview-update-target-css-property="color" data-default-color="#ffffff">
 					</div>
 				</td>
 			</tr>

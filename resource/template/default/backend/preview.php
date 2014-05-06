@@ -32,10 +32,10 @@
 			<tr valign="top">
 				<th scope="row">Background color</th>
 				<td>
-					<input size="8" class="color-picker-input" name="<?php echo $setting_variable . '[' . $id . ']'; ?>[background-color]" type="text" value="<?php echo $setting['background-color']; ?>" preview-update-target-css="#popup-box-preview-<?php echo $id; ?>" preview-update-target-css-property="background-color" data-default-color="#FFFFFF">
+					<input size="8" class="nqpc-picker-input-iyxm" name="<?php echo $setting_variable . '[' . $id . ']'; ?>[background-color]" type="text" value="<?php echo $setting['background-color']; ?>" preview-update-target-css="#popup-box-preview-<?php echo $id; ?>" preview-update-target-css-property="background-color" data-default-color="#FFFFFF">
 					<div class="popupally-style-same-line-block">
 						<strong class="popupally-style-same-line-label">Text color</strong>
-						<input size="8" class="color-picker-input" name="<?php echo $setting_variable . '[' . $id . ']'; ?>[text-color]" type="text" value="<?php echo $setting['text-color']; ?>" preview-update-target-css=".customizable-color-text-<?php echo $id; ?>" preview-update-target-css-property="color" data-default-color="#444444">
+						<input size="8" class="nqpc-picker-input-iyxm" name="<?php echo $setting_variable . '[' . $id . ']'; ?>[text-color]" type="text" value="<?php echo $setting['text-color']; ?>" preview-update-target-css=".customizable-color-text-<?php echo $id; ?>" preview-update-target-css-property="color" data-default-color="#444444">
 					</div>
 				</td>
 			</tr>
@@ -80,10 +80,10 @@
 			<tr valign="top">
 				<th scope="row">Subscribe button color</th>
 				<td>
-					<input size="8" class="color-picker-input" name="<?php echo $setting_variable . '[' . $id . ']'; ?>[subscribe-button-color]" type="text" value="<?php echo $setting['subscribe-button-color']; ?>" preview-update-target-css="#subscribe-button-<?php echo $id; ?>" preview-update-target-css-property="background-color" data-default-color="#00c98d">
+					<input size="8" class="nqpc-picker-input-iyxm" name="<?php echo $setting_variable . '[' . $id . ']'; ?>[subscribe-button-color]" type="text" value="<?php echo $setting['subscribe-button-color']; ?>" preview-update-target-css="#subscribe-button-<?php echo $id; ?>" preview-update-target-css-property="background-color" data-default-color="#00c98d">
 					<div class="popupally-style-same-line-block">
 						<strong class="popupally-style-same-line-label">Subscribe button text color</strong>
-						<input size="8" class="color-picker-input" name="<?php echo $setting_variable . '[' . $id . ']'; ?>[subscribe-button-text-color]" type="text" value="<?php echo $setting['subscribe-button-text-color']; ?>" preview-update-target-css="#subscribe-button-<?php echo $id; ?>" preview-update-target-css-property="color" data-default-color="#ffffff">
+						<input size="8" class="nqpc-picker-input-iyxm" name="<?php echo $setting_variable . '[' . $id . ']'; ?>[subscribe-button-text-color]" type="text" value="<?php echo $setting['subscribe-button-text-color']; ?>" preview-update-target-css="#subscribe-button-<?php echo $id; ?>" preview-update-target-css-property="color" data-default-color="#ffffff">
 					</div>
 				</td>
 			</tr>
