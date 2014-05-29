@@ -18,6 +18,6 @@
 				<div class="privacy-sxzw">{{privacy-text}}</div>
 			</div>
 		</div>
-		<a title="Close" class="popupally-close-sxzw popup-click-close-trigger-{{num}}" href="#">x</a>
+		<a title="Close" class="popupally-close-sxzw popup-click-close-trigger-{{num}}" href="#"></a>
 	</div>
 </div>

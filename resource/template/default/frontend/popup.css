@@ -41,7 +41,7 @@ box-sizing:border-box;
 -moz-box-sizing:border-box;
 cursor: pointer;
 }
-.popupally-inner-sxzw-{{num}} .field-sxzw {
+.popupally-inner-sxzw-{{num}} .popupally-center-sxzw .content-sxzw input[type="text"].field-sxzw {
 display:block;
 padding:15px 12px;
 margin:0 auto 10px auto;
@@ -61,7 +61,7 @@ box-sizing:border-box;
 -moz-box-sizing:border-box;
 height:auto;
 }
-.popupally-inner-sxzw-{{num}} .submit-sxzw {
+.popupally-inner-sxzw-{{num}} .popupally-center-sxzw .content-sxzw input[type="submit"].submit-sxzw {
 font-family: Arial, Helvetica, sans-serif;
 font-size: 22px;
 line-height:27px;
@@ -86,7 +86,7 @@ box-sizing:border-box;
 height:auto;
 background-image:none;
 }
-.popupally-inner-sxzw-{{num}} .submit-sxzw:hover {
+.popupally-inner-sxzw-{{num}} .popupally-center-sxzw .content-sxzw input[type="submit"].submit-sxzw:hover {
 background-color:{{subscribe-button-color}};
 color:{{subscribe-button-text-color}};
 background-image:none;
@@ -104,25 +104,16 @@ box-sizing:border-box;
 }
 .popupally-outer-sxzw-{{num}} .popupally-close-sxzw:link, .popupally-outer-sxzw-{{num}} .popupally-close-sxzw:visited, .popupally-outer-sxzw-{{num}} .popupally-close-sxzw:hover, .popupally-outer-sxzw-{{num}} .popupally-close-sxzw:active{text-decoration:none;}
 .popupally-outer-sxzw-{{num}} .popupally-close-sxzw {
-font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+background-image:url('/wp-content/plugins/popupally/resource/frontend/img/fancy_close.png');
+background-size:cover;
 display: block;
-font-size: 16px;
 position: absolute;
 top: -12px;
 right: -12px;
-width: 18px;
-height: 18px;
+width: 30px;
+height: 30px;
 color: white;
-line-height: 17px;
-text-align: center;
-text-decoration: none;
-vertical-align: baseline;
 cursor: pointer;
-background: black;
-border: 2pt solid white;
--webkit-border-radius: 18pt;
--moz-border-radius: 18pt;
-border-radius: 18pt;
 }
 .popupally-inner-sxzw-{{num}} .logo-row-sxzw {
 margin: 20px 0;

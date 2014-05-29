@@ -34,7 +34,7 @@ cursor:pointer;
 top:15px;
 left:60px;
 }
-.popupally-inner-plsbvs .field-plsbvs {
+.popupally-inner-plsbvs .popupally-center-plsbvs .content-plsbvs input[type="text"].field-plsbvs {
 position:relative;
 display:inline-block;
 padding:5px 4px;
@@ -58,7 +58,8 @@ margin:0;
 border-width:0;
 font-weight:400;
 }
-.popupally-inner-plsbvs .submit-plsbvs {
+.popupally-inner-plsbvs  .popupally-center-plsbvs .content-plsbvs input[type="button"].submit-plsbvs,
+.popupally-inner-plsbvs  .popupally-center-plsbvs .content-plsbvs input[type="submit"].submit-plsbvs {
 position:relative;
 display:inline-block;
 font-family: Arial, Helvetica, sans-serif;

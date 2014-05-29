@@ -57,7 +57,7 @@ color:{{plsbvs-text-color}};
 top:{{plsbvs-headline-top}}px;
 left:{{plsbvs-headline-left}}px;
 }
-.popupally-inner-plsbvs-{{num}} .field-plsbvs {
+.popupally-inner-plsbvs-{{num}} .popupally-center-plsbvs .content-plsbvs input[type="text"].field-plsbvs {
 position:relative;
 display:inline-block;
 padding:5px 4px;
@@ -79,15 +79,15 @@ margin:0;
 border-width:0;
 font-weight:400;
 }
-.popupally-inner-plsbvs-{{num}} .field-plsbvs-name {
+.popupally-inner-plsbvs-{{num}} .popupally-center-plsbvs .content-plsbvs input[type="text"].field-plsbvs-name {
 top:{{plsbvs-name-field-top}}px;
 left:{{plsbvs-name-field-left}}px;
 }
-.popupally-inner-plsbvs-{{num}} .field-plsbvs-email {
+.popupally-inner-plsbvs-{{num}} .popupally-center-plsbvs .content-plsbvs input[type="text"].field-plsbvs-email {
 top:{{plsbvs-email-field-top}}px;
 left:{{plsbvs-email-field-left}}px;
 }
-.popupally-inner-plsbvs-{{num}} .submit-plsbvs {
+.popupally-inner-plsbvs-{{num}} .popupally-center-plsbvs .content-plsbvs input[type="submit"].submit-plsbvs {
 position:relative;
 display:inline-block;
 font-family: Arial, Helvetica, sans-serif;
@@ -117,27 +117,23 @@ left:{{plsbvs-subscribe-button-left}}px;
 margin:0;
 font-weight:400;
 }
+.popupally-inner-plsbvs-{{num}} .popupally-center-plsbvs .content-plsbvs input[type="submit"].submit-plsbvs:hover {
+background-color:{{subscribe-button-color}};
+color:{{subscribe-button-text-color}};
+background-image:none;
+}
 .popupally-outer-plsbvs-{{num}} .popupally-close-plsbvs:link, .popupally-outer-plsbvs-{{num}} .popupally-close-plsbvs:visited, .popupally-outer-plsbvs-{{num}} .popupally-close-plsbvs:hover, .popupally-outer-plsbvs-{{num}} .popupally-close-plsbvs:active{text-decoration:none;}
 .popupally-outer-plsbvs-{{num}} .popupally-close-plsbvs {
-font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+background-image:url('/wp-content/plugins/popupally/resource/frontend/img/fancy_close.png');
+background-size:cover;
 display: block;
-font-size: 16px;
 position: absolute;
 top: -12px;
 right: -12px;
-width: 18px;
-height: 18px;
+width: 30px;
+height: 30px;
 color: white;
-line-height: 17px;
-text-align: center;
-text-decoration: none;
-vertical-align: baseline;
 cursor: pointer;
-background: black;
-border: 2pt solid white;
--webkit-border-radius: 18pt;
--moz-border-radius: 18pt;
-border-radius: 18pt;
 }
 @media (max-width: 1000px) {
 	.popupally-outer-plsbvs-{{num}}{width:{{responsive-768-plsbvs-width}}px;margin-left:-{{responsive-768-plsbvs-outer-half-width}}px;}

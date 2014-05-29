@@ -11,6 +11,6 @@
 				</form>
 			</div>
 		</div>
-		<a title="Close" class="popupally-close-plsbvs popup-click-close-trigger-{{num}}" href="#">x</a>
+		<a title="Close" class="popupally-close-plsbvs popup-click-close-trigger-{{num}}" href="#"></a>
 	</div>
 </div>
