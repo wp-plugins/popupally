@@ -124,11 +124,11 @@
 						<strong class="popupally-style-same-line-label">Subscribe Button Position</strong>
 						<span class="two-by-two-input">
 							Top
-							<input size="8" name="<?php echo $setting_variable . '[' . $id . ']'; ?>[plsbvs-subscribe-button-top]" type="text" value="<?php echo $setting['plsbvs-email-field-top']; ?>" preview-update-target-css="#plsbvs-subscribe-button-<?php echo $id; ?>" preview-update-target-css-property-px="top">px
+							<input size="8" name="<?php echo $setting_variable . '[' . $id . ']'; ?>[plsbvs-subscribe-button-top]" type="text" value="<?php echo $setting['plsbvs-subscribe-button-top']; ?>" preview-update-target-css="#plsbvs-subscribe-button-<?php echo $id; ?>" preview-update-target-css-property-px="top">px
 						</span>
 						<span class="two-by-two-input">
 							Left
-							<input size="8" name="<?php echo $setting_variable . '[' . $id . ']'; ?>[plsbvs-subscribe-button-left]" type="text" value="<?php echo $setting['plsbvs-email-field-left']; ?>" preview-update-target-css="#plsbvs-subscribe-button-<?php echo $id; ?>" preview-update-target-css-property-px="left">px
+							<input size="8" name="<?php echo $setting_variable . '[' . $id . ']'; ?>[plsbvs-subscribe-button-left]" type="text" value="<?php echo $setting['plsbvs-subscribe-button-left']; ?>" preview-update-target-css="#plsbvs-subscribe-button-<?php echo $id; ?>" preview-update-target-css-property-px="left">px
 						</span>
 					</div>
 				</td>
