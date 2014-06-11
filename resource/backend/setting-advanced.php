@@ -32,6 +32,29 @@
 				</table>
 			</fieldset>
 		</div>
+		<div class="popupally-setting-div">
+			<fieldset class="popupally-fieldset">
+				<legend>Page/post loading in Display Settings</legend>
+				<table class="form-table form-table-popupally-style-integration">
+					<tbody>
+						<tr valign="top">
+							<th scope="row"><label for="no-inline-checkbox">Max number of pages to load</label></th>
+							<td>
+								<input id="max-page" type="text" name="<?php echo PopupAlly::SETTING_KEY_ADVANCED; ?>[max-page]" value="<?php echo $advanced['max-page']; ?>"/>
+								<label for="max-page"><small>-1 to show all. Loading too many pages could prevent the "Display Settings" screen from loading due to time out.</small></label>
+							</td>
+						</tr>
+						<tr valign="top">
+							<th scope="row"><label for="no-inline-checkbox">Max number of posts to load</label></th>
+							<td>
+								<input id="max-post" type="text" name="<?php echo PopupAlly::SETTING_KEY_ADVANCED; ?>[max-post]" value="<?php echo $advanced['max-post']; ?>"/>
+								<label for="max-post"><small>-1 to show all. Loading too many posts could prevent the "Display Settings" screen from loading due to time out.</small></label>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</fieldset>
+		</div>
 		<p class="submit">
 			<input type="submit" class="button-primary" value="<?php _e('Save Changes') ?>" />
 		</p>

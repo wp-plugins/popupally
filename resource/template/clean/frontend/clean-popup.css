@@ -118,8 +118,8 @@ margin:0;
 font-weight:400;
 }
 .popupally-inner-plsbvs-{{num}} .popupally-center-plsbvs .content-plsbvs input[type="submit"].submit-plsbvs:hover {
-background-color:{{subscribe-button-color}};
-color:{{subscribe-button-text-color}};
+background-color:{{plsbvs-subscribe-button-color}};
+color:{{plsbvs-subscribe-button-text-color}};
 background-image:none;
 }
 .popupally-outer-plsbvs-{{num}} .popupally-close-plsbvs:link, .popupally-outer-plsbvs-{{num}} .popupally-close-plsbvs:visited, .popupally-outer-plsbvs-{{num}} .popupally-close-plsbvs:hover, .popupally-outer-plsbvs-{{num}} .popupally-close-plsbvs:active{text-decoration:none;}

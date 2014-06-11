@@ -3,7 +3,7 @@
  Plugin Name: PopupAlly
  Plugin URI: http://ambitionally.com/popupally/
  Description: Want to increase your subscriber base? Exit-intent popups allow you to capture lost visitors and have been shown to increase conversion by over 300%. PopupAlly allows you to create advanced popup signup forms in under 5 minutes, even if you don't know code. PopupAlly's visual editor allows you to customize the look-and-feel of your popups with an instant preview, saving you lots of time.
- Version: 1.2.9
+ Version: 1.3.0
  Author: Nathalie Lussier Media Inc.
  Author URI: http://nathalielussier.com/
  */
@@ -12,7 +12,7 @@
 if (!class_exists('PopupAlly')) {
 	class PopupAlly {
 		/// CONSTANTS
-		const VERSION = '1.2.9';
+		const VERSION = '1.3.0';
 
 		const SETTING_KEY_DISPLAY = '_popupally_setting_general';
 		const SETTING_KEY_STYLE = '_popupally_setting_style';
@@ -124,7 +124,7 @@ if (!class_exists('PopupAlly')) {
 			self::$default_display_settings = array(1 => self::$default_popup_display_settings, 2 => self::$default_popup_display_settings);
 			self::$default_style_settings = array(1 => self::customize_parameter_array(self::$default_popup_style_simple_settings, 1),
 				2 => self::customize_parameter_array(self::$default_popup_style_simple_settings, 2));
-			self::$default_advanced_settings = array('no-inline' => 'false');
+			self::$default_advanced_settings = array('no-inline' => 'false', 'max-page' => '500', 'max-post' => '500');
 		}
 		
 		public static function register_settings() {
@@ -260,8 +260,13 @@ if (!class_exists('PopupAlly')) {
 			$plugin_dir = plugin_dir_url(__FILE__);
 			$disable = file_get_contents(dirname(__FILE__) . '/resource/frontend/disable.php');
 
-			$pages = get_pages();
-			$posts = get_posts(array('posts_per_page' => -1));
+			$advanced = self::get_advanced_settings();
+			if ($advanced['max-page'] < 0) {
+				$pages = get_pages();
+			} else {
+				$pages = get_pages(array('number' => $advanced['max-page']));
+			}
+			$posts = get_posts(array('posts_per_page' => $advanced['max-post']));
 			$categories = get_categories(array('hide_empty' => false));
 			include (dirname(__FILE__) . '/resource/backend/setting-display.php');
 		}
