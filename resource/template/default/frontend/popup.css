@@ -104,7 +104,7 @@ box-sizing:border-box;
 }
 .popupally-outer-sxzw-{{num}} .popupally-close-sxzw:link, .popupally-outer-sxzw-{{num}} .popupally-close-sxzw:visited, .popupally-outer-sxzw-{{num}} .popupally-close-sxzw:hover, .popupally-outer-sxzw-{{num}} .popupally-close-sxzw:active{text-decoration:none;}
 .popupally-outer-sxzw-{{num}} .popupally-close-sxzw {
-background-image:url('/wp-content/plugins/popupally/resource/frontend/img/fancy_close.png');
+background-image:url('{{plugin_uri}}/resource/frontend/img/fancy_close.png');
 background-size:cover;
 display: block;
 position: absolute;

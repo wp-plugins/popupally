@@ -124,7 +124,7 @@ background-image:none;
 }
 .popupally-outer-plsbvs-{{num}} .popupally-close-plsbvs:link, .popupally-outer-plsbvs-{{num}} .popupally-close-plsbvs:visited, .popupally-outer-plsbvs-{{num}} .popupally-close-plsbvs:hover, .popupally-outer-plsbvs-{{num}} .popupally-close-plsbvs:active{text-decoration:none;}
 .popupally-outer-plsbvs-{{num}} .popupally-close-plsbvs {
-background-image:url('/wp-content/plugins/popupally/resource/frontend/img/fancy_close.png');
+background-image:url('{{plugin_uri}}/resource/frontend/img/fancy_close.png');
 background-size:cover;
 display: block;
 position: absolute;

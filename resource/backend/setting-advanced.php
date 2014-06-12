@@ -38,14 +38,14 @@
 				<table class="form-table form-table-popupally-style-integration">
 					<tbody>
 						<tr valign="top">
-							<th scope="row"><label for="no-inline-checkbox">Max number of pages to load</label></th>
+							<th scope="row"><label for="max-page">Max number of pages to load</label></th>
 							<td>
 								<input id="max-page" type="text" name="<?php echo PopupAlly::SETTING_KEY_ADVANCED; ?>[max-page]" value="<?php echo $advanced['max-page']; ?>"/>
 								<label for="max-page"><small>-1 to show all. Loading too many pages could prevent the "Display Settings" screen from loading due to time out.</small></label>
 							</td>
 						</tr>
 						<tr valign="top">
-							<th scope="row"><label for="no-inline-checkbox">Max number of posts to load</label></th>
+							<th scope="row"><label for="max-post">Max number of posts to load</label></th>
 							<td>
 								<input id="max-post" type="text" name="<?php echo PopupAlly::SETTING_KEY_ADVANCED; ?>[max-post]" value="<?php echo $advanced['max-post']; ?>"/>
 								<label for="max-post"><small>-1 to show all. Loading too many posts could prevent the "Display Settings" screen from loading due to time out.</small></label>
