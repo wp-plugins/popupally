@@ -1,4 +1,4 @@
-<div class="popupally-outer-embedded-sxzw-{{num}}">
+<div id="popup-embedded-box-sxzw-{{num}}" class="popupally-outer-embedded-sxzw-{{num}}">
 	<div class="popupally-inner-sxzw-{{num}}">
 		<div class="popupally-center-sxzw">
 			<div class="desc-sxzw">{{headline}}</div>

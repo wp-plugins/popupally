@@ -1,4 +1,4 @@
-<div class="popupally-outer-embedded-plsbvs-{{num}}">
+<div id="popup-embedded-box-sxzw-{{num}}" class="popupally-outer-embedded-plsbvs-{{num}}">
 	<div class="popupally-inner-plsbvs-{{num}}">
 		<div class="popupally-center-plsbvs">
 			<div class="desc-plsbvs">{{plsbvs-headline}}</div>
