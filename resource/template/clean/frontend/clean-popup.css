@@ -122,7 +122,7 @@ background-color:{{plsbvs-subscribe-button-color}};
 color:{{plsbvs-subscribe-button-text-color}};
 background-image:none;
 }
-#popup-box-sxzw-{{num}} .popupally-outer-plsbvs-{{num}} .popupally-close-plsbvs,#popup-embedded-box-sxzw-{{num}} .popupally-outer-plsbvs-{{num}} .popupally-close-plsbvs {
+#popup-box-sxzw-{{num}} .popupally-outer-plsbvs-{{num}} .popupally-close-plsbvs{
 background-image:url('{{plugin_uri}}/resource/frontend/img/fancy_close.png');
 background-size:cover;
 display: block;

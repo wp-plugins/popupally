@@ -6,7 +6,7 @@
 {{hidden-fields}}
 				<input type="text" name="{{sign-up-form-name-field}}" class="field-plsbvs field-plsbvs-name" placeholder="{{plsbvs-name-placeholder}}"/>
 				<input type="text" name="{{sign-up-form-email-field}}" class="field-plsbvs field-plsbvs-email" placeholder="{{plsbvs-email-placeholder}}"/>
-				<input type="submit" class="submit-plsbvs no-click-through" value="{{plsbvs-subscribe-button-text}}"/>
+				<input type="submit" class="submit-plsbvs" value="{{plsbvs-subscribe-button-text}}"/>
 			</form>
 		</div>
 	</div>

@@ -109,8 +109,7 @@ padding:0;
 box-sizing:border-box;
 -moz-box-sizing:border-box;
 }
-#popup-box-sxzw-{{num}} .popupally-outer-sxzw-{{num}} .popupally-close-sxzw,
-#popup-embedded-box-sxzw-{{num}} .popupally-outer-sxzw-{{num}} .popupally-close-sxzw{
+#popup-box-sxzw-{{num}} .popupally-outer-sxzw-{{num}} .popupally-close-sxzw{
 background-image:url('{{plugin_uri}}/resource/frontend/img/fancy_close.png');
 background-size:cover;
 display: block;
