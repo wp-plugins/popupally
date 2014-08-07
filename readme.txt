@@ -8,9 +8,9 @@ Tags: popups, free popups, lightbox, conversion, sign-up form, popup, exit-inten
 Author URI: http://nathalielussier.com/
 Author: Robin Li
 Requires at least: 2.3
-Tested up to: 3.9.1
-Version: 1.3.3
-Stable tag: 1.3.3
+Tested up to: 3.9.2
+Version: 1.3.4
+Stable tag: 1.3.4
 License: http://opensource.org/licenses/Artistic-2.0
 
 PopupAlly allows you to create advanced popup signup forms in under 5 minutes without the need to deal with messy code.
@@ -25,6 +25,14 @@ Aweber, MailChimp, MadMimi, iContact, GetResponse, Infusionsoft, and Ontraport e
 This simple popup plugin is pretty intuitive, but we've also written [extensive step-by-step tutorials](http://ambitionally.com/popupally/tutorials/) to help you get up and running faster so you can get back to business.
 
 With PopupAlly you can easily customize the look and feel of your lightbox popup, starting with the headline text, adding an image, and changing the colors to match your website's design. Then you decide if you want the popups to appear after a timed delay, or right before someone is about to leave your site. You also decide how often your popup should re-appear if someone closes it, so it doesn't annoy your visitors!
+
+= We got so much great feedback on our free WordPress popup plugin we created a premium version! =
+
+We love having a free WordPress popup plugin, and after tens of thousands of downloads we've gotten incredible feedback. We knew that there were more features we wanted to add, along with added support and functionality... so that's why we came up with [PopupAlly Pro](http://ambitionally.com/popupally-pro?utm_source=wordpressdirectory&utm_medium=banner&utm_content=main&utm_campaign=popupallypro).
+
+It's everything you love about PopupAlly, with an all newly designed interface so it's even more intuitive and quick to design beautifully customized popups and multiple types of embedded opt-ins, too.
+
+[Click here](http://ambitionally.com/popupally-pro?utm_source=wordpressdirectory&utm_medium=banner&utm_content=main&utm_campaign=popupallypro) to get PopupAlly Pro and install your next polite popup in 5 minutes.
 
 = Increase Your List More in 30 Days Or Less =
 With the help of this free WordPress popup plugin you'll be well on your way to growing your list faster than ever before. But don't stop there, go ahead and join the [free 30 Day List Building Challenge](http://30daylistbuildingchallenge.com) and see what's possible when you start to apply these additional list building strategies. 
@@ -45,6 +53,9 @@ Download AmbitionAlly's free WordPress popup plugin and increase your optin subs
 4. Control exactly when and where the popup will appear!
 
 == Changelog ==
+
+= 1.3.4 =
+* Update "Tested-up-to" version to 3.9.2
 
 = 1.3.3 =
 * Remove unused class to avoid conflict
@@ -141,6 +152,9 @@ Download AmbitionAlly's free WordPress popup plugin and increase your optin subs
 * Initial release.
 
 == Upgrade Notice ==
+
+= 1.3.4 =
+* Update "Tested-up-to" version to 3.9.2. No action is required after update.
 
 = 1.3.3 =
 * Remove unused class to avoid conflict. No action is required after update.
