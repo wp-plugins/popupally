@@ -9,8 +9,8 @@ Author URI: http://nathalielussier.com/
 Author: Robin Li
 Requires at least: 2.3
 Tested up to: 3.9.2
-Version: 1.3.4
-Stable tag: 1.3.4
+Version: 1.3.5
+Stable tag: 1.3.5
 License: http://opensource.org/licenses/Artistic-2.0
 
 PopupAlly allows you to create advanced popup signup forms in under 5 minutes without the need to deal with messy code.
@@ -18,21 +18,19 @@ PopupAlly allows you to create advanced popup signup forms in under 5 minutes wi
 == Description ==
 If you're looking to grow your list, then PopupAlly is the no-fluff free WordPress popup plugin for you. With built-in advanced features this lightbox popup plugin allows you to build your list as people are about to exit your website. Exit-intent popups allow you to capture lost visitors and have been shown to increase conversion by over 300%. PopupAlly allows you to create advanced popup signup forms in under 5 minutes, even if you don't know code. PopupAlly's visual editor allows you to customize the look-and-feel of your popups with an instant preview, saving you lots of time.
 
+> = Premium Support =
+> The PopupAlly team does not provide support for the PopupAlly plugin on the WordPress.org forums. One-on-one email support is available to people who bought the [PopupAlly Pro plugin](http://ambitionally.com/popupally-pro?utm_source=wordpressdirectory&utm_medium=banner&utm_content=main&utm_campaign=popupallypro) only.
+> We created the premium version with many extra features and an optimized interface, so it's even more intuitive and quick to design beautifully customized popups and multiple types of embedded opt-ins, too. It will be well worth of your investment!
+>
+> You should also check out our [free 30 Day List Building Challenge](http://30daylistbuildingchallenge.com) for tricks and tips to help you grow your list in addition to having great popups!
+
 = PopupAlly Free WordPess Popup Plugin Is Compatible With =
-Aweber, MailChimp, MadMimi, iContact, GetResponse, Infusionsoft, and Ontraport email marketing systems.
+Aweber, MailChimp, MadMimi, iContact, GetResponse, Infusionsoft, Ontraport, and any other email marketing systems that provides HTML opt-in code!
 
 = Get PopupAlly Step by Step Tutorials =
 This simple popup plugin is pretty intuitive, but we've also written [extensive step-by-step tutorials](http://ambitionally.com/popupally/tutorials/) to help you get up and running faster so you can get back to business.
 
 With PopupAlly you can easily customize the look and feel of your lightbox popup, starting with the headline text, adding an image, and changing the colors to match your website's design. Then you decide if you want the popups to appear after a timed delay, or right before someone is about to leave your site. You also decide how often your popup should re-appear if someone closes it, so it doesn't annoy your visitors!
-
-= We got so much great feedback on our free WordPress popup plugin we created a premium version! =
-
-We love having a free WordPress popup plugin, and after tens of thousands of downloads we've gotten incredible feedback. We knew that there were more features we wanted to add, along with added support and functionality... so that's why we came up with [PopupAlly Pro](http://ambitionally.com/popupally-pro?utm_source=wordpressdirectory&utm_medium=banner&utm_content=main&utm_campaign=popupallypro).
-
-It's everything you love about PopupAlly, with an all newly designed interface so it's even more intuitive and quick to design beautifully customized popups and multiple types of embedded opt-ins, too.
-
-[Click here](http://ambitionally.com/popupally-pro?utm_source=wordpressdirectory&utm_medium=banner&utm_content=main&utm_campaign=popupallypro) to get PopupAlly Pro and install your next polite popup in 5 minutes.
 
 = Increase Your List More in 30 Days Or Less =
 With the help of this free WordPress popup plugin you'll be well on your way to growing your list faster than ever before. But don't stop there, go ahead and join the [free 30 Day List Building Challenge](http://30daylistbuildingchallenge.com) and see what's possible when you start to apply these additional list building strategies. 
@@ -53,6 +51,10 @@ Download AmbitionAlly's free WordPress popup plugin and increase your optin subs
 4. Control exactly when and where the popup will appear!
 
 == Changelog ==
+
+= 1.3.5 =
+* Fix issue for preview display error when the opt-in form has an input field with no name.
+* Update FAQ section
 
 = 1.3.4 =
 * Update "Tested-up-to" version to 3.9.2
@@ -153,6 +155,9 @@ Download AmbitionAlly's free WordPress popup plugin and increase your optin subs
 
 == Upgrade Notice ==
 
+= 1.3.5 =
+* Fix issue for preview display error when the opt-in form has an input field with no name. No action is required after update.
+
 = 1.3.4 =
 * Update "Tested-up-to" version to 3.9.2. No action is required after update.
 
@@ -247,3 +252,17 @@ No programming experience required! You can see all the customizations instantly
 
 = How do I put in my own sign up form? =
 You just need to copy-and-paste in the HTML code from your CRM/list platform, and we will do the rest! No need to get your hands dirty with code.
+
+= The popup was working, but it is not longer showing up even though I did not change anything! =
+This is most likely due to the "Show popup every [x] days" option in Display Settings. Normally, you do not want to popup to show up every time a visitor comes to your website, so this option will stop the popup from showing up for [x] number of days. However, this makes testing difficult. The good news is that there are many ways to get around it. Please see the [tutorial](http://ambitionally.com/popupally/tutorials/#testing-private) for more details!
+
+= I have done everything according to the tutorial, but the popup is not showing up! =
+There are 3 main causes for this:
+* With "Show for all pages?" checked in Display Settings, please make sure you do NOT check "All Pages" and "All Posts" under "Except for these posts/pages"
+* Javascript errors will prevent popups from showing. With the page loaded, you can open the Developer View in Chrome and look for the red error sign. The error is usually caused by another plugin, so you can disable the active plugins one-by-one to see if that helps.
+* It could be a theme issue. The [Advanced Settings](http://ambitionally.com/popupally/tutorials/#testing-theme) might help. If not, please contact your developer and make sure your theme implements the standard WordPress hooks (wp_head and wp_footer)
+
+= Where do the sign-ups go? =
+You need an email marketing system before you can use PopupAlly. PopupAlly helps you create sign up forms that collects names and emails, which you can then send newsletter to on a regular basis. PopupAlly does not send email directly to the subscribers.
+You can check out the systems we recommend in the Email Marketing section on our [Resource Page](http://nathalielussier.com/online-business-resources)
+Once you have picked an email marketing system, you can integrate it with PopupAlly in the Style Settings. Please take a look at the [tutorial](http://ambitionally.com/popupally/tutorials/#configure-style-integration) for more in-depth explanations

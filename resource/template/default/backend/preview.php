@@ -41,7 +41,10 @@
 			</tr>
 			<tr valign="top">
 				<th scope="row">Headline (HTML code allowed)</th>
-				<td><textarea rows="3" class="full-width" input-empty-check="#display-headline-<?php echo $id; ?>" name="<?php echo $setting_variable . '[' . $id . ']'; ?>[headline]" preview-update-target="#preview-headline-<?php echo $id; ?>"><?php echo esc_attr($setting['headline']); ?></textarea></td>
+				<td>
+					<textarea rows="3" class="full-width" input-empty-check="#display-headline-<?php echo $id; ?>" name="<?php echo $setting_variable . '[' . $id . ']'; ?>[headline]" preview-update-target="#preview-headline-<?php echo $id; ?>"><?php echo esc_attr($setting['headline']); ?></textarea>
+					<small>Need to use a different font for the headline? <a href="<?php echo PopupAlly::POPUPALLY_PRO_URL; ?>">PopupAlly Pro</a> can help with that!</small>
+				</td>
 			</tr>
 			<tr valign="top" hide-toggle data-dependency="logo-img-<?php echo $id; ?>" data-dependency-value="upload">
 				<th scope="row">Logo Image<br />

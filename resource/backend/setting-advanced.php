@@ -7,7 +7,7 @@
 		<a class="popupally-display-sidebar-1" target="_blank" href="http://30daylistbuildingchallenge.com/?utm_source=popupallyplugin&utm_medium=sidebarad&utm_campaign=30daylistbuildingchallenge">
 			<img src="<?php echo $plugin_dir; ?>/resource/backend/popupally-side.png" alt="Check out the 30 Day List Building Challenge!" width="300" height="350">
 		</a>
-		<a class="popupally-display-sidebar-2" target="_blank" href="http://ambitionally.com/popupally-pro?utm_source=freeplugin&utm_medium=banner&utm_content=sidebar&utm_campaign=popupallypro">
+		<a class="popupally-display-sidebar-2" target="_blank" href="<?php echo PopupAlly::POPUPALLY_PRO_URL; ?>">
 			<img src="<?php echo $plugin_dir; ?>/resource/backend/popupally-side2.png" alt="Upgrade to PopupAlly Pro!" width="300" height="350">
 		</a>
 		<a class="popupally-display-sidebar-3" target="_blank" href="http://wordpress.org/plugins/popupally/">

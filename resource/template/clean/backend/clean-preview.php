@@ -65,6 +65,7 @@
 				<th scope="row">Headline (HTML code allowed)</th>
 				<td>
 					<textarea rows="3" class="full-width" name="<?php echo $setting_variable . '[' . $id . ']'; ?>[plsbvs-headline]" preview-update-target="#plsbvs-preview-headline-<?php echo $id; ?>"><?php echo esc_attr($setting['plsbvs-headline']); ?></textarea>
+					<small>Need to use a different font for the headline? <a href="<?php echo PopupAlly::POPUPALLY_PRO_URL; ?>">PopupAlly Pro</a> can help with that!</small>
 				</td>
 			</tr>
 			<tr valign="top">

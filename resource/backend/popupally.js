@@ -143,21 +143,23 @@ jQuery(document).ready(function($) {
 			var input_type = $input.attr('type')
 			var input_value = $input.val();
 
-			count += 1;
-			if('hidden' == input_type) {
-				$parent.before($('<input class="sign-up-form-generated-' + id + '" type="hidden" name="' + data_object.setting_variable + '[' + id + ']' + '[hidden-form-fields-name][' + count + ']"/>').val(input_name));
-				$parent.before($('<input class="sign-up-form-generated-' + id + '" type="hidden" name="' + data_object.setting_variable + '[' + id + ']' + '[hidden-form-fields-value][' + count + ']"/>').val(input_value));
-			} else {
-				$parent.before($('<input class="sign-up-form-generated-' + id + '" type="hidden" name="' + data_object.setting_variable + '[' + id + ']' + '[other-form-fields-name][' + count + ']"/>').val(input_name));
-				$parent.before($('<input class="sign-up-form-generated-' + id + '" type="hidden" name="' + data_object.setting_variable + '[' + id + ']' + '[other-form-fields-value][' + count + ']"/>').val(input_value));
-				other_inputs.push(input_name);
+			if (input_name) {
+				count += 1;
+				if('hidden' == input_type) {
+					$parent.before($('<input class="sign-up-form-generated-' + id + '" type="hidden" name="' + data_object.setting_variable + '[' + id + ']' + '[hidden-form-fields-name][' + count + ']"/>').val(input_name));
+					$parent.before($('<input class="sign-up-form-generated-' + id + '" type="hidden" name="' + data_object.setting_variable + '[' + id + ']' + '[hidden-form-fields-value][' + count + ']"/>').val(input_value));
+				} else {
+					$parent.before($('<input class="sign-up-form-generated-' + id + '" type="hidden" name="' + data_object.setting_variable + '[' + id + ']' + '[other-form-fields-name][' + count + ']"/>').val(input_name));
+					$parent.before($('<input class="sign-up-form-generated-' + id + '" type="hidden" name="' + data_object.setting_variable + '[' + id + ']' + '[other-form-fields-value][' + count + ']"/>').val(input_value));
+					other_inputs.push(input_name);
 
-				lowercased = input_name.toLowerCase();
+					lowercased = input_name.toLowerCase();
 
-				if('' === email_input_name && -1 < lowercased.indexOf('email')) {
-					email_input_name = input_name;
-				} else if('' === name_input_name && -1 < lowercased.indexOf('name')) {
-					name_input_name = input_name;
+					if('' === email_input_name && -1 < lowercased.indexOf('email')) {
+						email_input_name = input_name;
+					} else if('' === name_input_name && -1 < lowercased.indexOf('name')) {
+						name_input_name = input_name;
+					}
 				}
 			}
 		});
