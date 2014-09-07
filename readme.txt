@@ -8,9 +8,9 @@ Tags: popups, free popups, lightbox, conversion, sign-up form, popup, exit-inten
 Author URI: http://nathalielussier.com/
 Author: Robin Li
 Requires at least: 2.3
-Tested up to: 3.9.2
-Version: 1.3.7
-Stable tag: 1.3.7
+Tested up to: 4.0.0
+Version: 1.3.8
+Stable tag: 1.3.8
 License: http://opensource.org/licenses/Artistic-2.0
 
 PopupAlly allows you to create advanced popup signup forms in under 5 minutes without the need to deal with messy code.
@@ -20,7 +20,8 @@ If you're looking to grow your list, then PopupAlly is the no-fluff free WordPre
 
 > = Premium Support =
 > The PopupAlly team does not provide support for the PopupAlly plugin on the WordPress.org forums. One-on-one email support is available to people who bought the [PopupAlly Pro plugin](http://ambitionally.com/popupally-pro?utm_source=wordpressdirectory&utm_medium=banner&utm_content=main&utm_campaign=popupallypro) only.
-> We created the premium version with many extra features and an optimized interface, so it's even more intuitive and quick to design beautifully customized popups and multiple types of embedded opt-ins, too. It will be well worth of your investment!
+>
+> We created the [premium version](http://ambitionally.com/upgrading-to-popupally-pro/?utm_source=wordpressdirectory&utm_medium=banner&utm_content=main&utm_campaign=popupallypro) with many extra features and an optimized interface, so it's even more intuitive and quick to design beautifully customized popups and multiple types of embedded opt-ins, too. It will be well worth of your investment!
 >
 > You should also check out our [free 30 Day List Building Challenge](http://30daylistbuildingchallenge.com) for tricks and tips to help you grow your list in addition to having great popups!
 
@@ -51,6 +52,9 @@ Download AmbitionAlly's free WordPress popup plugin and increase your optin subs
 4. Control exactly when and where the popup will appear!
 
 == Changelog ==
+
+= 1.3.8 =
+* Test and verify that PopupAlly is compatible with WordPress 4.0.
 
 = 1.3.7 =
 * Fix bug where popup does not close on iPhone when clicking on background
@@ -160,6 +164,9 @@ Download AmbitionAlly's free WordPress popup plugin and increase your optin subs
 * Initial release.
 
 == Upgrade Notice ==
+
+= 1.3.8 =
+* Test and verify that PopupAlly is compatible with WordPress 4.0. No action is required after update.
 
 = 1.3.7 =
 * Fix bug where popup does not close on iPhone when clicking on background. No action is required after update.
