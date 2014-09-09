@@ -9,8 +9,8 @@ Author URI: http://nathalielussier.com/
 Author: Robin Li
 Requires at least: 2.3
 Tested up to: 4.0.0
-Version: 1.3.8
-Stable tag: 1.3.8
+Version: 1.3.9
+Stable tag: 1.3.9
 License: http://opensource.org/licenses/Artistic-2.0
 
 PopupAlly allows you to create advanced popup signup forms in under 5 minutes without the need to deal with messy code.
@@ -24,6 +24,15 @@ If you're looking to grow your list, then PopupAlly is the no-fluff free WordPre
 > We created the [premium version](http://ambitionally.com/upgrading-to-popupally-pro/?utm_source=wordpressdirectory&utm_medium=banner&utm_content=main&utm_campaign=popupallypro) with many extra features and an optimized interface, so it's even more intuitive and quick to design beautifully customized popups and multiple types of embedded opt-ins, too. It will be well worth of your investment!
 >
 > You should also check out our [free 30 Day List Building Challenge](http://30daylistbuildingchallenge.com) for tricks and tips to help you grow your list in addition to having great popups!
+
+= Why You Should Consider Upgrading to PopupAlly Pro =
+If you've been using our free PopupAlly plugin, then you already love the awesome exit intent functionality and the ability to create popups as well as embedded opt-ins... and you might be wondering what’s included in our premium version to justify the upgrade?
+
+We have a full side by side comparison of the two versions [here](http://ambitionally.com/upgrading-to-popupally-pro/?utm_source=wordpressdirectory&utm_medium=banner&utm_content=main&utm_campaign=popupallypro).
+
+On top of the incredibly flexible new design templates that allow you to customize your opt-ins to your heart's content... we've also included new ways to customize the user experience.
+
+Now, you can include mini-surveys and also have unlimited opt-ins, more polite popups, and much more. [Click here to find out why you should consider the upgrade](http://ambitionally.com/upgrading-to-popupally-pro/?utm_source=wordpressdirectory&utm_medium=banner&utm_content=main&utm_campaign=popupallypro).
 
 = PopupAlly Free WordPess Popup Plugin Is Compatible With =
 Aweber, MailChimp, MadMimi, iContact, GetResponse, Infusionsoft, Ontraport, and any other email marketing systems that provides HTML opt-in code!
@@ -52,6 +61,9 @@ Download AmbitionAlly's free WordPress popup plugin and increase your optin subs
 4. Control exactly when and where the popup will appear!
 
 == Changelog ==
+
+= 1.3.9 =
+* Update PopupAlly description.
 
 = 1.3.8 =
 * Test and verify that PopupAlly is compatible with WordPress 4.0.
@@ -164,6 +176,9 @@ Download AmbitionAlly's free WordPress popup plugin and increase your optin subs
 * Initial release.
 
 == Upgrade Notice ==
+
+= 1.3.9 =
+* Update PopupAlly description. No action is required after update.
 
 = 1.3.8 =
 * Test and verify that PopupAlly is compatible with WordPress 4.0. No action is required after update.
