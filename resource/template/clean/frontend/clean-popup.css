@@ -27,6 +27,7 @@ background-image:{{plsbvs-background-image}};
 background-size:contain;
 background-repeat:no-repeat;
 margin:0 auto;
+clear:both;
 }
 #popup-box-sxzw-{{num}} .popupally-inner-plsbvs-{{num}},#popup-embedded-box-sxzw-{{num}} .popupally-inner-plsbvs-{{num}}{overflow:visible;width:auto;height:auto;padding:0px;}
 #popup-box-sxzw-{{num}} .popupally-inner-plsbvs-{{num}} .popupally-center-plsbvs,#popup-embedded-box-sxzw-{{num}} .popupally-inner-plsbvs-{{num}} .popupally-center-plsbvs {
