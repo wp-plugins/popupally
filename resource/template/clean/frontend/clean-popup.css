@@ -18,6 +18,7 @@ box-shadow: 0 10px 25px rgba(0,0,0,0.5);
 border-radius: 4px;
 background-size:contain;
 background-repeat:no-repeat;
+text-align:left;
 }
 #popup-embedded-box-sxzw-{{num}}.popupally-outer-embedded-plsbvs-{{num}}{
 width:{{plsbvs-width}}px;
@@ -28,6 +29,7 @@ background-size:contain;
 background-repeat:no-repeat;
 margin:0 auto;
 clear:both;
+text-align:left;
 }
 #popup-box-sxzw-{{num}} .popupally-inner-plsbvs-{{num}},#popup-embedded-box-sxzw-{{num}} .popupally-inner-plsbvs-{{num}}{overflow:visible;width:auto;height:auto;padding:0px;}
 #popup-box-sxzw-{{num}} .popupally-inner-plsbvs-{{num}} .popupally-center-plsbvs,#popup-embedded-box-sxzw-{{num}} .popupally-inner-plsbvs-{{num}} .popupally-center-plsbvs {

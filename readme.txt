@@ -9,8 +9,8 @@ Author URI: http://nathalielussier.com/
 Author: Robin Li
 Requires at least: 2.3
 Tested up to: 4.1.0
-Version: 1.4.1
-Stable tag: 1.4.1
+Version: 1.4.2
+Stable tag: 1.4.2
 License: http://opensource.org/licenses/Artistic-2.0
 
 PopupAlly allows you to create advanced popup signup forms in under 5 minutes without the need to deal with messy code.
@@ -37,6 +37,9 @@ Now, you can include mini-surveys and also have unlimited opt-ins, more polite p
 = PopupAlly Free WordPess Popup Plugin Is Compatible With =
 Aweber, MailChimp, MadMimi, iContact, GetResponse, Infusionsoft, Ontraport, and any other email marketing systems that provides HTML opt-in code!
 
+Check out the video tutorial on how to integrate MailChimp and AWeber with PopupAlly:
+[youtube http://www.youtube.com/watch?v=q7xiX_BWTbU]
+
 = Get PopupAlly Step by Step Tutorials =
 This simple popup plugin is pretty intuitive, but we've also written [extensive step-by-step tutorials](http://ambitionally.com/popupally/tutorials/) to help you get up and running faster so you can get back to business.
 
@@ -51,7 +54,8 @@ Download AmbitionAlly's free WordPress popup plugin and increase your optin subs
 
 1. Activate the PopupAlly plugin
 2. Customize the plugin settings through the PopupAlly menu group
-3. Follow the rest of the [step-by-step tutorials here](http://ambitionally.com/popupally/tutorials/) 
+3. Follow the rest of the [step-by-step tutorials here](http://ambitionally.com/popupally/tutorials/)
+4. Make sure to integrate PopupAlly with an email marketing system so you do not lose any subscriber information! [MailChimp](http://nathalielussier.com/mailchimp) and [AWeber](http://nathalielussier.com/aweber) are two great options. Need more choices? You can find our recommended list of systems [here](http://nathalielussier.com/online-business-resources).
 
 == Screenshots ==
 
@@ -61,6 +65,10 @@ Download AmbitionAlly's free WordPress popup plugin and increase your optin subs
 4. Control exactly when and where the popup will appear!
 
 == Changelog ==
+
+= 1.4.2 =
+* Update "Express Yourself" popup CSS so that the layout is not affected by parent container's text-align settings.
+* Update documentation to include tutorial video.
 
 = 1.4.1 =
 * Update embedded popup CSS so that the layout is not affected by "float" elements.
@@ -184,6 +192,9 @@ Download AmbitionAlly's free WordPress popup plugin and increase your optin subs
 
 == Upgrade Notice ==
 
+= 1.4.2 =
+* Update "Express Yourself" popup CSS so that the layout is not affected by parent container's text-align settings. No action is required after update.
+
 = 1.4.1 =
 * Update embedded popup CSS so that the layout is not affected by "float" elements. No action is required after update.
 
@@ -290,6 +301,12 @@ Affects form parsing for Madmimi. Resave 'Style Settings' after upgrade. Upgrade
 
 = How many popups can I have? =
 You can configure 2 popups without upgrading to the Pro version
+
+= Where do the subscriber information go after they click the submit button? =
+You need an email marketing system before you can use PopupAlly. PopupAlly helps you create sign up forms that collects names and emails, which you can then send newsletter to on a regular basis. PopupAlly does not send email directly to the subscribers.
+
+[MailChimp](http://nathalielussier.com/mailchimp) and [AWeber](http://nathalielussier.com/aweber) are two great options. Here is a tutorial video to help you integrate [MailChimp](http://nathalielussier.com/mailchimp) / [AWeber](http://nathalielussier.com/aweber) with PopupAlly.
+[youtube http://www.youtube.com/watch?v=q7xiX_BWTbU]
 
 = Can I setup the popup for every post and page on my site? =
 Absolutely! You can enable the popup for every post and page with 1 click on the display settings!
