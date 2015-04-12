@@ -91,7 +91,7 @@ box-sizing:border-box;
 	float: left;
 }
 .popupally-inner-sxzw .logo-text-sxzw {
-	height: 100%;
+	height: auto;
 	width: 100%;
 	vertical-align: top;
 text-align: left;

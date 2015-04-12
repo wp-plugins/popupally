@@ -137,7 +137,7 @@ display: {{display-logo-img}};
 
 #popup-box-sxzw-{{num}} .popupally-inner-sxzw-{{num}} .logo-text-sxzw,
 #popup-embedded-box-sxzw-{{num}} .popupally-inner-sxzw-{{num}} .logo-text-sxzw{
-height: 100%;
+height: auto;
 width: 100%;
 vertical-align: top;
 text-align: left;
