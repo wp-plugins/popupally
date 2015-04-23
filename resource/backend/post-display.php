@@ -9,7 +9,7 @@
 		<?php foreach($to_show as $id=>$type) { ?>
 		<tr valign="top">
 			<th scope="row" style="width:50%;">
-				<?php echo '<a href="' . esc_attr(add_query_arg('page', PopupAlly::SETTING_KEY_STYLE, admin_url() . 'admin.php')) . '#popup-' . $id . '">' . $id . '</a>'; ?>
+				<?php echo '<a href="' . esc_url(add_query_arg('page', PopupAlly::SETTING_KEY_STYLE, admin_url() . 'admin.php')) . '#popup-' . $id . '">' . $id . '</a>'; ?>
 			</th>
 			<td>
 				<?php echo in_array('timed', $type) ? '&#x2714;' : ''; ?>
