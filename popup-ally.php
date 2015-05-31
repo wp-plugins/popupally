@@ -3,7 +3,7 @@
  Plugin Name: PopupAlly
  Plugin URI: http://ambitionally.com/popupally/
  Description: Want to increase your subscriber base? Exit-intent popups allow you to capture lost visitors and have been shown to increase conversion by over 300%. PopupAlly allows you to create advanced popup signup forms in under 5 minutes, even if you don't know code. PopupAlly's visual editor allows you to customize the look-and-feel of your popups with an instant preview, saving you lots of time.
- Version: 1.4.5
+ Version: 1.4.6
  Author: Nathalie Lussier Media Inc.
  Author URI: http://nathalielussier.com/
  */
@@ -12,7 +12,7 @@
 if (!class_exists('PopupAlly')) {
 	class PopupAlly {
 		/// CONSTANTS
-		const VERSION = '1.4.5';
+		const VERSION = '1.4.6';
 
 		const SETTING_KEY_DISPLAY = '_popupally_setting_general';
 		const SETTING_KEY_STYLE = '_popupally_setting_style';
@@ -142,13 +142,13 @@ if (!class_exists('PopupAlly')) {
 				$num_saved = self::get_num_style_saved_settings();
 				$to_show = self::get_popup_to_show();
 				if (!empty($to_show)) {
-					wp_enqueue_script('popupally-action-script', plugin_dir_url(__FILE__) . 'resource/frontend/popup.min.js', false, self::VERSION);
+					wp_enqueue_script('popupally-action-script', plugin_dir_url(__FILE__) . 'resource/frontend/popup.min.js', array('jquery'), self::VERSION);
 					wp_enqueue_style('popupally-style', content_url(self::SCRIPT_FOLDER) . '/popupally-style.css', false, self::VERSION . '.' . $num_saved);
 				}
 				$ids = self::get_popup_thank_you();
 				if (!empty($ids)){
 					foreach($ids as $id) {
-						wp_enqueue_script('popupally-thank-you-script-' . $id, content_url(self::SCRIPT_FOLDER) . '/popupally-thank-you-' . $id . '.js', false, self::VERSION . '.' . $num_saved);
+						wp_enqueue_script('popupally-thank-you-script-' . $id, content_url(self::SCRIPT_FOLDER) . '/popupally-thank-you-' . $id . '.js', array('jquery'), self::VERSION . '.' . $num_saved);
 					}
 				}
 			}

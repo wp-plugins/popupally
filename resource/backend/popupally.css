@@ -158,6 +158,9 @@ a.anchor{display: block; position: relative; top: -20px; visibility: hidden;}
 	font-weight:bold;
 	margin-right:10px;
 }
+.popupally-template-bxsjbi {
+	min-width:1280px;
+}
 @media (max-width: 1440px) {
 	.popupally-style-customization select {
 		max-width:200px;

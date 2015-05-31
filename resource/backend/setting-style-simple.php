@@ -59,7 +59,7 @@
 				</select>
 				</div>
 				<?php foreach (PopupAlly::$available_templates as $template_uid => $template_obj) { ?>
-					<div hide-toggle data-dependency="template-selector-<?php echo $id; ?>" data-dependency-value="<?php echo $template_uid; ?>" >
+					<div class="popupally-template-<?php echo $template_uid; ?>" hide-toggle data-dependency="template-selector-<?php echo $id; ?>" data-dependency-value="<?php echo $template_uid; ?>" >
 						<?php include $template_obj->backend_php; ?>
 					</div>
 				<?php } ?>

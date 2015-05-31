@@ -8,9 +8,9 @@ Tags: popups, free popups, lightbox, conversion, sign-up form, popup, exit-inten
 Author URI: http://nathalielussier.com/
 Author: Robin Li
 Requires at least: 2.3
-Tested up to: 4.1.2
-Version: 1.4.5
-Stable tag: 1.4.5
+Tested up to: 4.2.2
+Version: 1.4.6
+Stable tag: 1.4.6
 License: http://opensource.org/licenses/Artistic-2.0
 
 PopupAlly allows you to create advanced popup signup forms in under 5 minutes without the need to deal with messy code.
@@ -65,6 +65,11 @@ Download AmbitionAlly's free WordPress popup plugin and increase your optin subs
 4. Control exactly when and where the popup will appear!
 
 == Changelog ==
+
+= 1.4.6 =
+* Update tested version to 4.2.2.
+* Add jQuery to script dependency.
+* Improve style setting customization interface.
 
 = 1.4.5 =
 * Update tested version to 4.1.2.
@@ -200,6 +205,9 @@ Download AmbitionAlly's free WordPress popup plugin and increase your optin subs
 * Initial release.
 
 == Upgrade Notice ==
+
+= 1.4.6 =
+* Update tested version to 4.2.2. Cosmetic changes to interface. No action is required after update.
 
 = 1.4.5 =
 * Update tested version to 4.1.2. No action is required after update.
